@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/components/BaseLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import PostCard from "@/components/PostCard.astro";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+<BaseLayout title="Blog" description="Field notes on maps, GIS and geospatial databases.">
+  <section class="section container">
+    <SectionHeader
+      tag="From the blog"
+      title="Field notes"
+      lead="The more interesting projects, and what I learned making them."
+    />
+
+    {posts.length === 0 ? (
+      <p>No posts yet. Check back soon.</p>
+    ) : (
+      <div class="grid">
+        {posts.map((entry) => (
+          <PostCard
+            title={entry.data.title}
+            description={entry.data.description}
+            pubDate={entry.data.pubDate}
+            tags={entry.data.tags}
+            href={`/blog/${entry.id}`}
+          />
+        ))}
+      </div>
+    )}
+  </section>
+</BaseLayout>

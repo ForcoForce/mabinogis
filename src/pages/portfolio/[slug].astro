@@ -1,0 +1,135 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import BaseLayout from "@/components/BaseLayout.astro";
+import Stamp from "@/components/Stamp.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("portfolio", ({ data }) => !data.draft);
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, summary, cover, tags, tools, year } = entry.data;
+---
+<BaseLayout title={title} description={summary}>
+  <article class="section container detail">
+    <a class="back" href="/portfolio">← All projects</a>
+
+    <header class="detail__head">
+      <h1>{title}</h1>
+      <p class="detail__summary">{summary}</p>
+      <div class="detail__meta">
+        <Stamp text={String(year)} tone="ink" tilt={-3} />
+        {tags.length > 0 && (
+          <ul class="detail__chips">
+            {tags.map((tag) => <li class="chip">{tag}</li>)}
+          </ul>
+        )}
+      </div>
+    </header>
+
+    <div class="detail__cover">
+      <Image src={cover} alt={`${title} cover image`} width={1200} />
+    </div>
+
+    {tools.length > 0 && (
+      <section class="detail__tools">
+        <p class="mono-label">Tools</p>
+        <ul class="detail__chips">
+          {tools.map((tool) => <li class="chip">{tool}</li>)}
+        </ul>
+      </section>
+    )}
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .detail {
+    max-width: 52rem;
+  }
+  .back {
+    display: inline-block;
+    margin-bottom: var(--sp-4);
+    font-family: var(--font-mono);
+    font-size: var(--fs-0);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .detail__summary {
+    font-size: var(--fs-2);
+    color: var(--ink-soft);
+  }
+  .detail__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-4);
+  }
+  .detail__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+  .detail__cover :global(img) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .detail__tools {
+    margin-top: var(--sp-4);
+  }
+  .detail__tools .mono-label {
+    margin: 0 0 var(--sp-2);
+  }
+  .prose {
+    margin-top: var(--sp-5);
+  }
+  .prose :global(h2),
+  .prose :global(h3) {
+    margin-top: 1.6em;
+  }
+  .prose :global(ul),
+  .prose :global(ol) {
+    margin: 0 0 1em;
+    padding-left: 1.4em;
+    list-style: revert;
+  }
+  .prose :global(blockquote) {
+    margin: 1.5em 0;
+    padding: var(--sp-2) var(--sp-4);
+    border-left: 3px solid var(--vermilion);
+    background: var(--card);
+    color: var(--ink-soft);
+  }
+  .prose :global(code) {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+    background: var(--cream-deep);
+  }
+  /* Astro's syntax highlighter sets its own dark background on <pre> */
+  .prose :global(pre) {
+    overflow-x: auto;
+    padding: var(--sp-3);
+    border-radius: var(--radius-sm);
+  }
+  .prose :global(pre code) {
+    padding: 0;
+    background: none;
+    font-size: 0.9em;
+  }
+  .prose :global(img) {
+    border-radius: var(--radius-sm);
+  }
+</style>

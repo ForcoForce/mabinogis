@@ -1,0 +1,122 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import BaseLayout from "@/components/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("blog", ({ data }) => !data.draft);
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, description, pubDate, updatedDate, tags, cover } = entry.data;
+
+const format = (date: Date) =>
+  date.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+---
+<BaseLayout title={title} description={description}>
+  <article class="section container post">
+    <a class="back" href="/blog">← All posts</a>
+
+    <header class="post__head">
+      <p class="mono-label">
+        <time datetime={pubDate.toISOString()}>{format(pubDate)}</time>
+        {updatedDate && <span> · Updated <time datetime={updatedDate.toISOString()}>{format(updatedDate)}</time></span>}
+      </p>
+      <h1>{title}</h1>
+      <p class="post__lead">{description}</p>
+      {tags.length > 0 && (
+        <ul class="post__chips">
+          {tags.map((tag) => <li class="chip">{tag}</li>)}
+        </ul>
+      )}
+    </header>
+
+    {cover && (
+      <div class="post__cover">
+        <Image src={cover} alt={`${title} cover image`} width={1200} />
+      </div>
+    )}
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post {
+    max-width: 44rem;
+  }
+  .back {
+    display: inline-block;
+    margin-bottom: var(--sp-4);
+    font-family: var(--font-mono);
+    font-size: var(--fs-0);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .post__head .mono-label {
+    margin: 0 0 var(--sp-2);
+  }
+  .post__lead {
+    font-size: var(--fs-2);
+    color: var(--ink-soft);
+  }
+  .post__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-4);
+  }
+  .post__cover :global(img) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .prose {
+    margin-top: var(--sp-5);
+  }
+  .prose :global(h2),
+  .prose :global(h3) {
+    margin-top: 1.6em;
+  }
+  .prose :global(ul),
+  .prose :global(ol) {
+    margin: 0 0 1em;
+    padding-left: 1.4em;
+    list-style: revert;
+  }
+  .prose :global(blockquote) {
+    margin: 1.5em 0;
+    padding: var(--sp-2) var(--sp-4);
+    border-left: 3px solid var(--vermilion);
+    background: var(--card);
+    color: var(--ink-soft);
+  }
+  .prose :global(code) {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+    background: var(--cream-deep);
+  }
+  /* Astro's syntax highlighter sets its own dark background on <pre> */
+  .prose :global(pre) {
+    overflow-x: auto;
+    padding: var(--sp-3);
+    border-radius: var(--radius-sm);
+  }
+  .prose :global(pre code) {
+    padding: 0;
+    background: none;
+    font-size: 0.9em;
+  }
+  .prose :global(img) {
+    border-radius: var(--radius-sm);
+  }
+</style>
