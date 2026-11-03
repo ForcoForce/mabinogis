@@ -1,0 +1,48 @@
+---
+interface Props {
+  count?: number;
+  seed?: number;
+}
+const { count = 36, seed = 7 } = Astro.props;
+
+// Deterministic pseudo-random numbers (LCG). Do not use Math.random().
+let state = seed;
+const rand = () => {
+  state = (state * 1664525 + 1013904223) % 4294967296;
+  return state / 4294967296;
+};
+
+const soundings = Array.from({ length: count }, () => ({
+  x: Math.round(rand() * 1000) / 10,
+  y: Math.round(rand() * 1000) / 10,
+  n: 1 + Math.floor(rand() * 99),
+  big: rand() > 0.8,
+}));
+---
+<div class="soundings" aria-hidden="true">
+  {soundings.map((s) => (
+    <span class:list={["soundings__n", { "soundings__n--big": s.big }]} style={`left:${s.x}%;top:${s.y}%`}>
+      {s.n}
+    </span>
+  ))}
+</div>
+
+<style>
+  /* Parent must be position: relative; overflow: hidden. */
+  .soundings {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.18;
+  }
+  .soundings__n {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+  }
+  .soundings__n--big {
+    font-size: 1rem;
+  }
+</style>

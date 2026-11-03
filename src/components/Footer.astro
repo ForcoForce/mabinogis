@@ -1,0 +1,77 @@
+---
+import Cartouche from "@/components/Cartouche.astro";
+import ScaleBar from "@/components/ScaleBar.astro";
+import CompassRose from "@/components/CompassRose.astro";
+import { site } from "@/data/site";
+---
+<footer class="footer">
+  <div class="container footer__grid">
+    <Cartouche />
+
+    <div class="footer__contact">
+      <p class="mono-label">Say hello</p>
+      <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <p class="footer__muted">{site.location}</p>
+      <ul class="footer__socials">
+        {site.socials.map((social) => (
+          <li>
+            <a href={social.href} target="_blank" rel="noopener noreferrer">{social.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="footer__chart">
+      <CompassRose size="72px" />
+      <ScaleBar />
+    </div>
+  </div>
+
+  <div class="container footer__legal">
+    © {new Date().getFullYear()} {site.owner}
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--card);
+    border-top: 1px solid var(--line);
+    padding-top: var(--sp-5);
+  }
+  .footer__grid {
+    display: grid;
+    gap: var(--sp-5);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    align-items: start;
+    padding-bottom: var(--sp-5);
+  }
+  .footer__contact p {
+    margin: 0 0 var(--sp-2);
+  }
+  .footer__muted {
+    color: var(--ink-soft);
+  }
+  .footer__socials {
+    display: flex;
+    gap: var(--sp-3);
+  }
+  .footer__socials a {
+    font-family: var(--font-mono);
+    font-size: var(--fs-0);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .footer__chart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+  .footer__legal {
+    border-top: 1px solid var(--line);
+    padding-block: var(--sp-3);
+    font-family: var(--font-mono);
+    font-size: var(--fs-0);
+    color: var(--ink-soft);
+  }
+</style>

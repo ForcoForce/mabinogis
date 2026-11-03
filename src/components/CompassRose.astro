@@ -1,0 +1,57 @@
+---
+interface Props {
+  size?: string;
+}
+const { size = "64px" } = Astro.props;
+---
+<svg viewBox="0 0 100 100" width={size} height={size} aria-hidden="true" focusable="false">
+  <circle class="ring" cx="50" cy="54" r="42" />
+  <circle class="ring ring--inner" cx="50" cy="54" r="30" />
+
+  <g class="minor" transform="rotate(45 50 54)">
+    <polygon points="50,28 54,54 46,54" />
+    <polygon points="50,80 54,54 46,54" />
+  </g>
+  <g class="minor" transform="rotate(-45 50 54)">
+    <polygon points="50,28 54,54 46,54" />
+    <polygon points="50,80 54,54 46,54" />
+  </g>
+
+  <g class="major" transform="rotate(90 50 54)">
+    <polygon points="50,14 55,54 45,54" />
+    <polygon points="50,94 55,54 45,54" />
+  </g>
+  <polygon class="north" points="50,14 55,54 45,54" />
+  <polygon class="major" points="50,94 55,54 45,54" />
+
+  <text class="letter" x="50" y="9" text-anchor="middle">N</text>
+</svg>
+
+<style>
+  svg {
+    display: block;
+  }
+  .ring {
+    fill: none;
+    stroke: var(--taupe);
+    stroke-width: 1;
+  }
+  .ring--inner {
+    stroke-dasharray: 2 3;
+  }
+  .minor polygon {
+    fill: var(--taupe);
+  }
+  .major polygon,
+  polygon.major {
+    fill: var(--ink-soft);
+  }
+  .north {
+    fill: var(--vermilion);
+  }
+  .letter {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    fill: var(--ink-soft);
+  }
+</style>

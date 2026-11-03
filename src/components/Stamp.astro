@@ -1,0 +1,32 @@
+---
+interface Props {
+  text: string;
+  tone?: "vermilion" | "ink";
+  tilt?: number;
+}
+const { text, tone = "vermilion", tilt = -6 } = Astro.props;
+---
+<span class:list={["stamp", `stamp--${tone}`]} style={`--tilt: ${tilt}deg`}>{text}</span>
+
+<style>
+  .stamp {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 2px solid currentColor;
+    border-radius: 6px;
+    outline: 1px solid currentColor;
+    outline-offset: 3px;
+    background: var(--card-frost);
+    transform: rotate(var(--tilt));
+  }
+  .stamp--vermilion {
+    color: var(--vermilion);
+  }
+  .stamp--ink {
+    color: var(--ink);
+  }
+</style>

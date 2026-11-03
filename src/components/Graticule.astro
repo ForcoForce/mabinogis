@@ -1,0 +1,58 @@
+---
+type Edge = "top" | "right" | "bottom" | "left";
+
+interface Props {
+  edges?: Edge[];
+  step?: number;
+}
+const { edges = ["top", "right", "bottom", "left"], step = 12 } = Astro.props;
+---
+<div class="graticule" style={`--step: ${step}px`} aria-hidden="true">
+  {edges.map((edge) => <span class={`graticule__edge graticule__edge--${edge}`} />)}
+</div>
+
+<style>
+  /* Parent element must be position: relative. */
+  .graticule {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .graticule__edge {
+    position: absolute;
+  }
+  .graticule__edge--top,
+  .graticule__edge--bottom {
+    left: var(--radius);
+    right: var(--radius);
+    height: 6px;
+    background: repeating-linear-gradient(
+      to right,
+      var(--taupe) 0 1px,
+      transparent 1px var(--step)
+    );
+  }
+  .graticule__edge--top {
+    top: 5px;
+  }
+  .graticule__edge--bottom {
+    bottom: 5px;
+  }
+  .graticule__edge--left,
+  .graticule__edge--right {
+    top: var(--radius);
+    bottom: var(--radius);
+    width: 6px;
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--taupe) 0 1px,
+      transparent 1px var(--step)
+    );
+  }
+  .graticule__edge--left {
+    left: 5px;
+  }
+  .graticule__edge--right {
+    right: 5px;
+  }
+</style>

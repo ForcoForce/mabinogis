@@ -1,0 +1,47 @@
+---
+interface Props {
+  label: string;
+  href: string;
+  coord: string;
+  active: boolean;
+}
+const { label, href, coord, active } = Astro.props;
+---
+<li class:list={["navitem", { "navitem--active": active }]}>
+  <a href={href} aria-current={active ? "page" : undefined}>
+    <span class="navitem__coord">{coord}</span>
+    <span class="navitem__label">{label}</span>
+  </a>
+</li>
+
+<style>
+  .navitem a {
+    display: block;
+    padding: 0.55rem 0.9rem;
+    border-left: 3px solid transparent;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    text-decoration: none;
+    color: var(--ink);
+    transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+  }
+  .navitem a:hover {
+    background: var(--cream-deep);
+  }
+  .navitem--active a {
+    border-left-color: var(--vermilion);
+    background: var(--cream-deep);
+  }
+  .navitem__coord {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+  }
+  .navitem__label {
+    display: block;
+    font-family: var(--font-head);
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+</style>

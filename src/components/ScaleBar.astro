@@ -1,0 +1,33 @@
+---
+interface Props {
+  label?: string;
+}
+const { label = "0 · 25 · 50 km" } = Astro.props;
+---
+<div class="scalebar" aria-hidden="true">
+  <div class="scalebar__bar"></div>
+  <span class="scalebar__label">{label}</span>
+</div>
+
+<style>
+  .scalebar {
+    display: inline-flex;
+    flex-direction: column;
+    gap: var(--sp-1);
+  }
+  .scalebar__bar {
+    width: 140px;
+    height: 8px;
+    border: 1px solid var(--ink);
+    background: repeating-linear-gradient(
+      to right,
+      var(--ink) 0 25%,
+      var(--card) 25% 50%
+    );
+  }
+  .scalebar__label {
+    font-family: var(--font-mono);
+    font-size: var(--fs-0);
+    color: var(--ink-soft);
+  }
+</style>

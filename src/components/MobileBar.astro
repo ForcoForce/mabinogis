@@ -1,0 +1,128 @@
+---
+import Logo from "@/components/Logo.astro";
+import NavItem from "@/components/NavItem.astro";
+import { site, nav } from "@/data/site";
+
+interface Props {
+  currentPath: string;
+}
+const { currentPath } = Astro.props;
+
+const items = nav.filter((entry) => entry.enabled);
+const isActive = (href: string) =>
+  href === "/" ? currentPath === "/" : currentPath.startsWith(href);
+---
+<header class="mobilebar">
+  <a class="mobilebar__brand" href="/" aria-label={`${site.name} home`}>
+    <Logo size="36px" animate={false} />
+    <span class="mobilebar__name">{site.name}</span>
+  </a>
+  <button class="mobilebar__btn" type="button" aria-expanded="false" aria-controls="mobile-drawer">
+    Menu
+  </button>
+  <nav id="mobile-drawer" class="mobilebar__drawer" aria-label="Main (mobile)" hidden>
+    <ul>
+      {items.map((entry) => (
+        <NavItem
+          label={entry.label}
+          href={entry.href}
+          coord={entry.coord}
+          active={isActive(entry.href)}
+        />
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .mobilebar {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--sp-3);
+    background: var(--card-frost);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    z-index: 20;
+  }
+  @media (min-width: 900px) {
+    .mobilebar {
+      display: none;
+    }
+  }
+  .mobilebar__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .mobilebar__name {
+    font-family: var(--font-head);
+    font-size: 1.3rem;
+  }
+  .mobilebar__btn {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.45rem 1rem;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .mobilebar__btn:hover {
+    background: var(--ink);
+    color: var(--card);
+  }
+  .mobilebar__drawer {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    padding: var(--sp-3) var(--sp-3) var(--sp-4) 0;
+    background: var(--card);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow-card);
+  }
+  .mobilebar__drawer[hidden] {
+    display: none;
+  }
+  .mobilebar__drawer ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-1);
+  }
+</style>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>(".mobilebar__btn");
+  const drawer = document.getElementById("mobile-drawer");
+
+  if (button && drawer) {
+    const setOpen = (open: boolean) => {
+      drawer.hidden = !open;
+      button.setAttribute("aria-expanded", String(open));
+      button.textContent = open ? "Close" : "Menu";
+    };
+
+    button.addEventListener("click", () => setOpen(drawer.hidden));
+
+    drawer.addEventListener("click", (event) => {
+      if ((event.target as HTMLElement).closest("a")) setOpen(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !drawer.hidden) {
+        setOpen(false);
+        button.focus();
+      }
+    });
+  }
+</script>

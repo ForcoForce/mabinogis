@@ -1,0 +1,59 @@
+---
+import "@fontsource/baskervville/400.css";
+import "@fontsource/source-serif-4/400.css";
+import "@fontsource/source-serif-4/600.css";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
+import "@/styles/tokens.css";
+import "@/styles/global.css";
+import Sidebar from "@/components/Sidebar.astro";
+import MobileBar from "@/components/MobileBar.astro";
+import Footer from "@/components/Footer.astro";
+import { site } from "@/data/site";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = site.tagline } = Astro.props;
+
+const path = Astro.url.pathname;
+const canonical = new URL(path, Astro.site);
+const fullTitle = title.includes(site.name) ? title : `${title} | ${site.name}`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Sidebar currentPath={path} />
+    <MobileBar currentPath={path} />
+    <div class="site-shell">
+      <main id="main">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style>
+  .site-shell {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: 1;
+  }
+</style>

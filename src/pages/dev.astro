@@ -1,0 +1,77 @@
+---
+// TEMPORARY test page for Stage 2. Deleted in Stage 8.
+import "@/styles/tokens.css";
+import "@/styles/global.css";
+import Graticule from "@/components/Graticule.astro";
+import CompassRose from "@/components/CompassRose.astro";
+import ScaleBar from "@/components/ScaleBar.astro";
+import Cartouche from "@/components/Cartouche.astro";
+import SoundingsBackground from "@/components/SoundingsBackground.astro";
+import RhumbDivider from "@/components/RhumbDivider.astro";
+import Stamp from "@/components/Stamp.astro";
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Stage 2 test</title>
+  </head>
+  <body>
+    <main class="container" style="padding-block: 2rem; display: grid; gap: 2rem;">
+      <h1>Stage 2: chart components</h1>
+
+      <section>
+        <h2>Graticule on a card</h2>
+        <div class="card" style="padding: 2rem; max-width: 420px;">
+          <Graticule />
+          <p>All four edges, step 12.</p>
+        </div>
+        <div class="card" style="padding: 2rem; max-width: 420px; margin-top: 1rem;">
+          <Graticule edges={["top", "bottom"]} step={20} />
+          <p>Top and bottom only, step 20.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>CompassRose</h2>
+        <div style="display: flex; gap: 2rem; align-items: end;">
+          <CompassRose size="48px" />
+          <CompassRose />
+          <CompassRose size="160px" />
+        </div>
+      </section>
+
+      <section>
+        <h2>ScaleBar</h2>
+        <ScaleBar />
+        <ScaleBar label="0 · 1 · 2 mi" />
+      </section>
+
+      <section>
+        <h2>Cartouche</h2>
+        <Cartouche />
+      </section>
+
+      <section>
+        <h2>SoundingsBackground</h2>
+        <div style="position: relative; overflow: hidden; height: 220px;" class="card">
+          <SoundingsBackground />
+          <p style="padding: 1rem;">Faint numbers behind this text.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>RhumbDivider</h2>
+        <RhumbDivider />
+        <RhumbDivider flip />
+      </section>
+
+      <section>
+        <h2>Stamp</h2>
+        <div style="display: flex; gap: 2rem; padding: 1rem;">
+          <Stamp text="Open for projects" />
+          <Stamp text="2026" tone="ink" tilt={4} />
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

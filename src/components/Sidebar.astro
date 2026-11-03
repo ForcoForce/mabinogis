@@ -1,0 +1,114 @@
+---
+import Logo from "@/components/Logo.astro";
+import NavItem from "@/components/NavItem.astro";
+import CompassRose from "@/components/CompassRose.astro";
+import { site, nav } from "@/data/site";
+
+interface Props {
+  currentPath: string;
+}
+const { currentPath } = Astro.props;
+
+const items = nav.filter((entry) => entry.enabled);
+const isActive = (href: string) =>
+  href === "/" ? currentPath === "/" : currentPath.startsWith(href);
+---
+<aside class="sidebar">
+  <a class="sidebar__brand" href="/" aria-label={`${site.name} home`}>
+    <Logo size="110px" animate={false} />
+    <span class="sidebar__name">{site.name}</span>
+  </a>
+
+  <nav class="sidebar__nav" aria-label="Main">
+    <ul>
+      {items.map((entry) => (
+        <NavItem
+          label={entry.label}
+          href={entry.href}
+          coord={entry.coord}
+          active={isActive(entry.href)}
+        />
+      ))}
+    </ul>
+  </nav>
+
+  <div class="sidebar__foot">
+    <ul class="sidebar__socials">
+      {site.socials.map((social) => (
+        <li>
+          <a href={social.href} target="_blank" rel="noopener noreferrer">{social.label}</a>
+        </li>
+      ))}
+    </ul>
+    <p class="sidebar__coord">{site.coord}</p>
+    <CompassRose size="56px" />
+  </div>
+</aside>
+
+<style>
+  .sidebar {
+    display: none;
+  }
+  @media (min-width: 900px) {
+    .sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: var(--sidebar-w);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+      padding: var(--sp-4) var(--sp-3) var(--sp-3) 0;
+      background: var(--card);
+      border-right: 1px solid var(--line);
+      overflow-y: auto;
+      z-index: 10;
+    }
+  }
+  .sidebar__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-2);
+    padding-left: var(--sp-3);
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .sidebar__name {
+    font-family: var(--font-head);
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+  .sidebar__nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-1);
+  }
+  .sidebar__foot {
+    margin-top: auto;
+    padding-left: var(--sp-3);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-2);
+  }
+  .sidebar__socials {
+    display: flex;
+    gap: var(--sp-3);
+  }
+  .sidebar__socials a {
+    font-family: var(--font-mono);
+    font-size: var(--fs-0);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .sidebar__socials a:hover {
+    color: var(--vermilion);
+  }
+  .sidebar__coord {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--fs-0);
+    color: var(--ink-soft);
+  }
+</style>
