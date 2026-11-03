@@ -1,0 +1,36 @@
+---
+interface Props {
+  tag: string;
+  title: string;
+  lead?: string;
+  align?: "left" | "center";
+}
+const { tag, title, lead, align = "left" } = Astro.props;
+---
+<header class:list={["section-header", `section-header--${align}`]}>
+  <p class="mono-label">{tag}</p>
+  <h2>{title}</h2>
+  {lead && <p class="section-header__lead">{lead}</p>}
+</header>
+
+<style>
+  .section-header {
+    max-width: 44rem;
+    margin-bottom: var(--sp-5);
+  }
+  .section-header--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+  .section-header .mono-label {
+    margin: 0 0 var(--sp-2);
+  }
+  .section-header h2 {
+    margin-bottom: var(--sp-2);
+  }
+  .section-header__lead {
+    margin: 0;
+    font-size: var(--fs-2);
+    color: var(--ink-soft);
+  }
+</style>

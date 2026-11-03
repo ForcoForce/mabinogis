@@ -1,8 +1,50 @@
 ---
 import BaseLayout from "@/components/BaseLayout.astro";
+import Hero from "@/components/Hero.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import PillarCard from "@/components/PillarCard.astro";
+import SoundingsBackground from "@/components/SoundingsBackground.astro";
+import { services } from "@/data/services";
 ---
 <BaseLayout title="Mabinogis · Maps are cool.">
-  <section class="section container">
-    <h1>Mabinogis</h1>
+  <Hero />
+
+  <section id="pillars" class="section pillars">
+    <SoundingsBackground />
+    <div class="container pillars__inner">
+      <SectionHeader
+        tag="Services"
+        title="Four ways to put your data on the map"
+        lead="Whether it needs to look good, hold up under analysis, or live in a tidy database."
+      />
+      <div class="pillars__grid">
+        {services.map((service) => <PillarCard service={service} />)}
+      </div>
+    </div>
   </section>
 </BaseLayout>
+
+<style>
+  .pillars {
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .pillars__inner {
+    position: relative;
+  }
+  .pillars__grid {
+    display: grid;
+    gap: var(--sp-4);
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 700px) {
+    .pillars__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1500px) {
+    .pillars__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>

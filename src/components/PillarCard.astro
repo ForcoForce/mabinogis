@@ -1,0 +1,74 @@
+---
+import Graticule from "@/components/Graticule.astro";
+import type { Service } from "@/data/services";
+
+interface Props {
+  service: Service;
+}
+const { service } = Astro.props;
+---
+<article class="card card--tilt pillar">
+  <Graticule />
+  <p class="mono-label pillar__coord">{service.coord}</p>
+  <div class="pillar__icon">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      {service.icon === "map" && (
+        <>
+          <path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z" />
+          <path d="M9 4v14" />
+          <path d="M15 6v14" />
+        </>
+      )}
+      {service.icon === "analysis" && (
+        <>
+          <path d="M3 3v18h18" />
+          <path d="M7 15l4-5 3 3 5-7" />
+          <circle cx="19" cy="6" r="1.2" />
+        </>
+      )}
+      {service.icon === "database" && (
+        <>
+          <ellipse cx="12" cy="5" rx="8" ry="3" />
+          <path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5" />
+          <path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" />
+        </>
+      )}
+      {service.icon === "cog" && (
+        <>
+          <circle cx="12" cy="12" r="7" />
+          <circle cx="12" cy="12" r="2.5" />
+          <path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2" />
+        </>
+      )}
+    </svg>
+  </div>
+  <h3 class="pillar__title">{service.title}</h3>
+  <p class="pillar__blurb">{service.blurb}</p>
+</article>
+
+<style>
+  .pillar {
+    padding: var(--sp-5) var(--sp-4) var(--sp-4);
+  }
+  .pillar__coord {
+    margin: 0 0 var(--sp-3);
+  }
+  .pillar__icon {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: var(--sp-3);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--cream-deep);
+    color: var(--vermilion);
+  }
+  .pillar__title {
+    margin-bottom: var(--sp-2);
+  }
+  .pillar__blurb {
+    margin: 0;
+    color: var(--ink-soft);
+  }
+</style>
