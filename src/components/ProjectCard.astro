@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import Stamp from "@/components/Stamp.astro";
+import Graticule from "@/components/Graticule.astro";
+
+interface Props {
+  title: string;
+  summary: string;
+  cover: ImageMetadata;
+  tags: string[];
+  year: number;
+  href: string;
+}
+const { title, summary, cover, tags, year, href } = Astro.props;
+---
+<article class="card card--tilt project" data-tags={tags.join(",")}>
+  <a class="project__link" href={href}>
+    <div class="project__media">
+      <Image src={cover} alt={`${title} cover image`} width={800} />
+      <span class="project__stamp"><Stamp text={String(year)} tone="ink" tilt={4} /></span>
+    </div>
+    <h3 class="project__title">{title}</h3>
+    <p class="project__summary">{summary}</p>
+    {tags.length > 0 && (
+      <ul class="project__tags">
+        {tags.map((tag) => <li class="chip">{tag}</li>)}
+      </ul>
+    )}
+  </a>
+  <Graticule />
+</article>
+
+<style>
+  .project__link {
+    display: block;
+    padding: 14px 14px var(--sp-3);
+    border-radius: var(--radius);
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .project__media {
+    position: relative;
+    margin-bottom: var(--sp-3);
+  }
+  .project__media :global(img) {
+    width: 100%;
+    height: auto; /* overrides the height attribute Astro adds to <Image> */
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--line);
+  }
+  .project__stamp {
+    position: absolute;
+    top: var(--sp-2);
+    right: var(--sp-2);
+  }
+  .project__title {
+    margin-bottom: var(--sp-2);
+    padding-inline: var(--sp-1);
+  }
+  .project__summary {
+    margin: 0 0 var(--sp-3);
+    padding-inline: var(--sp-1);
+    color: var(--ink-soft);
+  }
+  .project__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    padding-inline: var(--sp-1);
+  }
+</style>

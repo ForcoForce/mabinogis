@@ -1,0 +1,58 @@
+---
+import Graticule from "@/components/Graticule.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  tags: string[];
+  href: string;
+}
+const { title, description, pubDate, tags, href } = Astro.props;
+
+const dateLabel = pubDate.toLocaleDateString("en-GB", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  timeZone: "UTC",
+});
+---
+<article class="card card--tilt post">
+  <a class="post__link" href={href}>
+    <time class="mono-label post__date" datetime={pubDate.toISOString()}>{dateLabel}</time>
+    <h3 class="post__title">{title}</h3>
+    <p class="post__desc">{description}</p>
+    {tags.length > 0 && (
+      <ul class="post__tags">
+        {tags.map((tag) => <li class="chip">{tag}</li>)}
+      </ul>
+    )}
+  </a>
+  <Graticule />
+</article>
+
+<style>
+  .post__link {
+    display: block;
+    padding: var(--sp-5) var(--sp-4) var(--sp-4);
+    border-radius: var(--radius);
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .post__date {
+    display: block;
+    margin-bottom: var(--sp-2);
+  }
+  .post__title {
+    margin-bottom: var(--sp-2);
+  }
+  .post__desc {
+    margin: 0 0 var(--sp-3);
+    color: var(--ink-soft);
+  }
+  .post__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+</style>

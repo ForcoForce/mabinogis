@@ -1,0 +1,42 @@
+---
+import SoundingsBackground from "@/components/SoundingsBackground.astro";
+
+interface Props {
+  heading: string;
+  text: string;
+  label: string;
+  href: string;
+}
+const { heading, text, label, href } = Astro.props;
+---
+<section class="cta">
+  <SoundingsBackground seed={11} />
+  <div class="container cta__inner">
+    <h2 class="cta__heading">{heading}</h2>
+    <p class="cta__text">{text}</p>
+    <a class="btn" href={href}>{label}</a>
+  </div>
+</section>
+
+<style>
+  .cta {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3rem, 8vw, 5rem);
+    background: var(--cream-deep);
+    border-block: 1px solid var(--line);
+    text-align: center;
+  }
+  .cta__inner {
+    position: relative;
+  }
+  .cta__heading {
+    margin-bottom: var(--sp-2);
+  }
+  .cta__text {
+    max-width: 34rem;
+    margin: 0 auto var(--sp-4);
+    font-size: var(--fs-2);
+    color: var(--ink-soft);
+  }
+</style>
