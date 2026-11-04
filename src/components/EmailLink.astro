@@ -1,0 +1,19 @@
+---
+import { site } from "@/data/site";
+
+// The full address is never written into the HTML. Only the two halves are,
+// and a small script joins them in the visitor's browser.
+const [user, domain] = site.email.split("@");
+const readable = `${user} [at] ${domain.replace(/\./g, " [dot] ")}`;
+---
+<span class="email" data-user={user} data-domain={domain}>{readable}</span>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".email[data-user]").forEach((el) => {
+    const address = `${el.dataset.user}@${el.dataset.domain}`;
+    const link = document.createElement("a");
+    link.href = `mailto:${address}`;
+    link.textContent = address;
+    el.replaceWith(link);
+  });
+</script>

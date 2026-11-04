@@ -1,0 +1,47 @@
+---
+interface Props {
+  label: string;
+  value?: string;
+  href?: string;
+  external?: boolean;
+}
+const { label, value, href, external = false } = Astro.props;
+---
+<div class="contactrow">
+  <dt class="mono-label">{label}</dt>
+  <dd>
+    <slot>
+      {href ? (
+        <a href={href} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined}>{value}</a>
+      ) : (
+        value
+      )}
+    </slot>
+  </dd>
+</div>
+
+<style>
+  .contactrow {
+    padding-block: var(--sp-3);
+    border-bottom: 1px solid var(--line);
+  }
+  .contactrow:last-child {
+    border-bottom: 0;
+  }
+  dt {
+    margin: 0 0 var(--sp-1);
+  }
+  dd {
+    margin: 0;
+    font-family: var(--font-head);
+    font-size: var(--fs-3);
+    line-height: 1.2;
+  }
+  dd :global(a) {
+    color: var(--ink);
+    text-decoration-color: var(--vermilion);
+  }
+  dd :global(a:hover) {
+    color: var(--vermilion);
+  }
+</style>

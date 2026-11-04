@@ -1,0 +1,72 @@
+---
+import BaseLayout from "@/components/BaseLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import ContactRow from "@/components/ContactRow.astro";
+import ContactForm from "@/components/ContactForm.astro";
+import EmailLink from "@/components/EmailLink.astro";
+import PhoneLink from "@/components/PhoneLink.astro";
+import Graticule from "@/components/Graticule.astro";
+import Stamp from "@/components/Stamp.astro";
+import RhumbDivider from "@/components/RhumbDivider.astro";
+import { site } from "@/data/site";
+
+const [artstation, linkedin] = site.socials;
+---
+<BaseLayout title="Contact" description="Get in touch about map design, GIS analysis and geospatial databases.">
+  <section class="section container">
+    <SectionHeader
+      tag="Contact"
+      title="Say hello"
+      lead="Tell me what you're working on. A rough idea is plenty to start with."
+    />
+
+    <div class="contact__grid">
+      <div class="card contact__info">
+        <Graticule />
+        <dl>
+          <ContactRow label="Run by" value={site.owner} />
+          <ContactRow label="Email"><EmailLink /></ContactRow>
+          <ContactRow label="Phone"><PhoneLink /></ContactRow>
+          <ContactRow label="Location" value={site.location} />
+          <ContactRow label={artstation.label} value="artstation.com/forcoforce" href={artstation.href} external />
+          <ContactRow label={linkedin.label} value="Marko Đuranović" href={linkedin.href} external />
+        </dl>
+        <p class="contact__note">{site.availability}</p>
+        <span class="contact__stamp"><Stamp text="Open for projects" /></span>
+      </div>
+
+      <div class="card contact__form">
+        <Graticule />
+        <ContactForm action={site.formAction} />
+      </div>
+    </div>
+  </section>
+
+  <RhumbDivider />
+</BaseLayout>
+
+<style>
+  .contact__grid {
+    display: grid;
+    gap: var(--sp-4);
+  }
+  @media (min-width: 1100px) {
+    .contact__grid {
+      grid-template-columns: 1fr 1.3fr;
+      align-items: start;
+    }
+  }
+  .contact__info,
+  .contact__form {
+    padding: var(--sp-5) var(--sp-4) var(--sp-4);
+  }
+  .contact__note {
+    margin: var(--sp-3) 0 0;
+    color: var(--ink-soft);
+  }
+  .contact__stamp {
+    position: absolute;
+    top: -14px;
+    right: var(--sp-4);
+  }
+</style>

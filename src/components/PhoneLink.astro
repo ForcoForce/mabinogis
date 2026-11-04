@@ -1,0 +1,18 @@
+---
+import { site } from "@/data/site";
+
+// The full number is never written into the HTML. Only separate chunks are,
+// and a small script joins them in the visitor's browser.
+const parts = site.phone.split(" ");
+---
+<span class="phone" data-parts={parts.join("|")}>Enable JavaScript to see the number, or use the form.</span>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".phone[data-parts]").forEach((el) => {
+    const parts = (el.dataset.parts ?? "").split("|");
+    const link = document.createElement("a");
+    link.href = `tel:${parts.join("")}`;
+    link.textContent = parts.join(" ");
+    el.replaceWith(link);
+  });
+</script>

@@ -1,0 +1,44 @@
+---
+import BaseLayout from "@/components/BaseLayout.astro";
+import CompassRose from "@/components/CompassRose.astro";
+import SoundingsBackground from "@/components/SoundingsBackground.astro";
+---
+<BaseLayout title="Page not found" description="This page is off the map.">
+  <section class="section notfound">
+    <SoundingsBackground seed={23} count={48} />
+    <div class="container notfound__inner">
+      <CompassRose size="140px" />
+      <p class="mono-label">Error 404</p>
+      <h1>Off the map</h1>
+      <p class="notfound__text">
+        That page doesn't exist, or it sailed off the edge of the chart. Let's get you back to known waters.
+      </p>
+      <a class="btn" href="/">Back home</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .notfound {
+    min-height: 60svh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    text-align: center;
+  }
+  .notfound__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-2);
+  }
+  .notfound__inner h1 {
+    margin: 0;
+  }
+  .notfound__text {
+    max-width: 32rem;
+    margin: 0 0 var(--sp-3);
+    color: var(--ink-soft);
+  }
+</style>

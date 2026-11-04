@@ -7,6 +7,7 @@ export const site = {
   url: "https://www.mabinogis.com",
   tagline: "Maps are cool.",
   email: "marko@mabinogis.com",
+  phone: "+49 179 538 7888",
   location: "Zagreb / Remote",
   coord: "45°48′N 15°58′E",
   availability: "Open for new projects. I usually reply within a couple of working days.",

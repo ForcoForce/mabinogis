@@ -2,6 +2,7 @@
 import Cartouche from "@/components/Cartouche.astro";
 import ScaleBar from "@/components/ScaleBar.astro";
 import CompassRose from "@/components/CompassRose.astro";
+import EmailLink from "@/components/EmailLink.astro";
 import { site } from "@/data/site";
 ---
 <footer class="footer">
@@ -10,7 +11,7 @@ import { site } from "@/data/site";
 
     <div class="footer__contact">
       <p class="mono-label">Say hello</p>
-      <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <p><EmailLink /></p>
       <p class="footer__muted">{site.location}</p>
       <ul class="footer__socials">
         {site.socials.map((social) => (
