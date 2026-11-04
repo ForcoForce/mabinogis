@@ -107,6 +107,8 @@ At the top of the `<style>` block in `src/components/Hero.astro` there are three
 
 The overall strength of the background is `--hero-bg-opacity` in `src/styles/tokens.css`.
 
+The background also has a gentle **parallax** effect: it scrolls slower than the page. The speed is the `SPEED` value (default `0.4`) in the `<script>` at the bottom of `Hero.astro`: `0` moves with the page, `1` stays fixed on screen. It switches itself off for visitors who prefer reduced motion. To remove the effect, delete that `<script>` block.
+
 ### Change colours and fonts
 Everything is defined in `src/styles/tokens.css`. Components only use these variables.
 

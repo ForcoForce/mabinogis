@@ -59,7 +59,9 @@ import { site } from "@/data/site";
     position: absolute;
     inset: 0;
     opacity: var(--hero-bg-opacity);
-    transform: scale(1.08);
+    /* --parallax is set by the script at the bottom of this file */
+    transform: translate3d(0, var(--parallax, 0px), 0) scale(1.08);
+    will-change: transform;
   }
   .hero__bg :global(img) {
     width: 100%;
@@ -168,3 +170,37 @@ import { site } from "@/data/site";
     50% { transform: translateY(6px); }
   }
 </style>
+
+<script>
+  // Parallax: the background drifts down while you scroll, so it moves slower than the page.
+  const SPEED = 0.4; // 0 = moves with the page, 1 = stays fixed on screen
+  const hero = document.querySelector<HTMLElement>(".hero");
+  const background = document.querySelector<HTMLElement>(".hero__bg");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (hero && background) {
+    let queued = false;
+
+    const update = () => {
+      queued = false;
+      if (reducedMotion.matches) {
+        background.style.removeProperty("--parallax");
+        return;
+      }
+      const scrolled = Math.min(Math.max(0, -hero.getBoundingClientRect().top), hero.offsetHeight);
+      background.style.setProperty("--parallax", `${Math.round(scrolled * SPEED)}px`);
+    };
+
+    const onScroll = () => {
+      if (!queued) {
+        queued = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    reducedMotion.addEventListener("change", update);
+    update();
+  }
+</script>

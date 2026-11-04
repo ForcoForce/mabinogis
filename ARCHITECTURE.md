@@ -14,7 +14,7 @@ Single source of truth for the build. Follow it literally. If something is missi
 - Decorative elements get `aria-hidden="true"`. `--taupe` is decorative only, never for text.
 - Breakpoint: `900px`. Desktop is `min-width: 900px`; mobile is `max-width: 899px`. (CSS variables cannot be used in media queries, so hardcode it.)
 - Component style: `interface Props {}` then `const { a, b = "default" } = Astro.props;`. Scoped `<style>` in each component. No inline colours.
-- Supplied assets, never regenerate: `src/components/Logo.astro`, `src/assets/backgrounds/bg-1-blur.webp`, `src/assets/portfolio/portfolio_1.png` to `portfolio_5.png` (underscore names, PNG).
+- Supplied assets, never regenerate: `src/components/Logo.astro`, `src/assets/backgrounds/bg-1-blur.webp`, `src/assets/backgrounds/bg-1-original.webp`, `src/assets/portfolio/portfolio_1.png` to `portfolio_5.png` (underscore names, PNG).
 
 ---
 
@@ -45,6 +45,7 @@ src/
     blog/map-design-basics.md  sample post
   assets/
     backgrounds/bg-1-blur.webp [SUPPLIED] pre-blurred hero background
+    backgrounds/bg-1-original.webp [SUPPLIED] unblurred hero background (sharp at the edges)
     portfolio/portfolio_1.png  [SUPPLIED] (portfolio_1.png to portfolio_5.png)
   styles/
     tokens.css                 design tokens only
@@ -56,6 +57,8 @@ src/
     MobileBar.astro            mobile top bar + toggle drawer (vanilla JS)
     NavItem.astro              one nav link with coordinate label
     Footer.astro               cartouche, scale bar, socials, copyright
+    EmailLink.astro            email assembled in the browser so scrapers cannot read it
+    PhoneLink.astro            phone assembled in the browser so scrapers cannot read it
     Hero.astro                 full-screen landing hero
     SectionHeader.astro        vermilion tag + title + optional lead
     PillarCard.astro           one service card
@@ -94,7 +97,9 @@ src/
 | Sidebar | `currentPath: string` | none | Logo, NavItem, CompassRose | BaseLayout |
 | MobileBar | `currentPath: string` | none | Logo, NavItem | BaseLayout |
 | NavItem | `label: string`, `href: string`, `coord: string`, `active: boolean` | none | none | Sidebar, MobileBar |
-| Footer | none | none | Cartouche, ScaleBar, CompassRose | BaseLayout |
+| Footer | none | none | Cartouche, ScaleBar, CompassRose, EmailLink | BaseLayout |
+| EmailLink | none (reads `@/data/site`) | none | none | Footer, contact |
+| PhoneLink | none (reads `@/data/site`) | none | none | contact |
 | Hero | none | none | Logo, Stamp, Graticule, Image (bg) | index |
 | SectionHeader | `tag: string`, `title: string`, `lead?: string`, `align?: "left" or "center"` | none | none | all pages |
 | PillarCard | `service: Service` (type from `@/data/services`) | none | Graticule | index |
@@ -102,7 +107,7 @@ src/
 | PostCard | `title: string`, `description: string`, `pubDate: Date`, `tags: string[]`, `href: string` | none | none | index, blog/index |
 | TagFilter | `tags: string[]`, `targetId: string` | none | none | portfolio/index |
 | CTABand | `heading: string`, `text: string`, `label: string`, `href: string` | none | SoundingsBackground | index, contact |
-| ContactRow | `label: string`, `value: string`, `href?: string`, `external?: boolean` | none | none | contact |
+| ContactRow | `label: string`, `value?: string`, `href?: string`, `external?: boolean` | default (replaces the value and link, used for EmailLink and PhoneLink) | none | contact |
 | ContactForm | `action: string` | none | none | contact |
 | Graticule | `edges?: ("top" or "right" or "bottom" or "left")[]` (default all), `step?: number` (px, default 12) | none | none | PillarCard, ProjectCard, Hero |
 | CompassRose | `size?: string` (default `"64px"`) | none | none | Sidebar, Footer, 404 |
@@ -119,7 +124,7 @@ src/
 - **Sidebar:** `<aside>`; `position: fixed; inset: 0 auto 0 0; width: var(--sidebar-w)`; background `var(--card)`; right border `1px solid var(--line)`; hidden below 900px. Top: Logo (`size="110px"`, `animate={false}`) wrapped in a link to `/` with `aria-label="Mabinogis home"`; name in `--font-head`. Middle: `<nav aria-label="Main">` list of NavItem from `nav.filter(n => n.enabled)`. Bottom: socials as links, coordinate line (`site.coord`, mono), small CompassRose.
 - **NavItem:** a link with a mono coordinate span (colour `--ink-soft`, not taupe, for readable contrast) and the label in `--font-head`. Active: vermilion left bar, `aria-current="page"`.
 - **MobileBar:** `<header>`; fixed top, height 56px, frosted background, bottom border; hidden at 900px and above. Left: small Logo (`size="36px"`, `animate={false}`) + name. Right: `<button aria-expanded="false" aria-controls="mobile-drawer">Menu</button>`. Drawer: `<nav id="mobile-drawer" hidden>` with NavItems. Vanilla `<script>`: button click toggles the `hidden` attribute on the drawer and `aria-expanded`; Escape and any link click close it.
-- **Hero:** `<section class="hero">`, `min-height: 100svh`, `position: relative; overflow: hidden`, NOT fixed. Layers, bottom to top: (1) `<div class="hero__bg">` wrapping `<Image src={bg} alt="" loading="eager" />`, absolutely positioned `inset: 0`, `opacity: var(--hero-bg-opacity)`, `transform: scale(1.08)`; style the image with `.hero__bg :global(img) { width: 100%; height: 100%; object-fit: cover; }`. (2) `.hero__vignette`: radial-gradient, transparent centre to `var(--paper)` at the edges, plus a bottom fade into `var(--paper)`. (3) Content, centred with grid: `<Logo size="min(30vh, 260px)" />`, `<h1>Mabinogis</h1>`, a `.card.card--frost` with the tagline "Maps are cool." and a mono line "Map design · GIS analysis · Geospatial databases", `<Graticule />` inside that card, a `<Stamp text="Open for projects" />` tilted at the card's corner, then a scroll cue (`<a href="#pillars">` with a down arrow). The next section sits on `var(--paper)`, so scrolling reveals a plain cream page. No JavaScript is needed.
+- **Hero:** `<section class="hero">`, `min-height: 100svh` (on mobile `calc(100svh - 56px)`), `position: relative; overflow: hidden`, NOT fixed. Layers, bottom to top: (1) `<div class="hero__bg">` (absolutely positioned `inset: 0`, `opacity: var(--hero-bg-opacity)`, `transform: scale(1.08)`) holding TWO images: the sharp `bg-1-original.webp` `<Image>`, then a `<div class="hero__blur">` holding the `bg-1-blur.webp` `<Image>`. `.hero__blur` is absolutely positioned and masked with `mask-image` (and `-webkit-mask-image`) `radial-gradient(ellipse at center, #000 var(--blur-full-until), transparent var(--blur-gone-at))`, so the map is blurred in the centre and sharp at the edges. Tuning variables on `.hero`: `--blur-full-until: 20%`, `--blur-gone-at: 70%`, `--glow-opacity: 0.59`. Style images with `.hero__bg :global(img) { width: 100%; height: 100%; object-fit: cover; }`. (2) `.hero__vignette`: a bottom fade into `var(--paper)` plus a light radial edge fade (`color-mix(in srgb, var(--paper) 45%, transparent)`) so the sharp edges stay visible. (3) Content, centred with grid: a `.hero__logo` wrapper around `<Logo size="min(26vh, 230px)" />` with a soft glow made by a `::before` pseudo-element (`inset: -45%`, `radial-gradient(circle closest-side, var(--card) 0%, var(--card) 40%, transparent 100%)`, `opacity: var(--glow-opacity)`); `<h1>Mabinogis</h1>`; a `.card.card--frost` with the tagline "Maps are cool." and a mono line "Map design · GIS analysis · Geospatial databases", `<Graticule />` inside that card, and a `<Stamp text="Open for projects" />` (wrapped in a positioned span) at the card's corner; then a scroll cue (`<a href="#pillars">` with a down arrow). The next section sits on `var(--paper)`, so scrolling reveals a plain cream page. No JavaScript is needed.
 - **Graticule:** CSS only. Absolutely positioned inside a `position: relative` parent; one thin element per edge using `repeating-linear-gradient` ticks in `var(--taupe)`; `pointer-events: none`.
 - **SoundingsBackground:** absolutely positioned layer, `pointer-events: none`, `opacity: .18`. Generates `count` small mono numbers (1 to 99) at deterministic positions from a simple LCG seeded with `seed` (no `Math.random`). Parent must be `position: relative; overflow: hidden`.
 - **Stamp:** inline-block, mono uppercase, double border (`outline` plus `border`), `transform: rotate(var(--tilt))`.
@@ -308,6 +313,7 @@ export const site = {
   url: "https://www.mabinogis.com",
   tagline: "Maps are cool.",
   email: "marko@mabinogis.com",
+  phone: "+49 179 538 7888",
   location: "Zagreb / Remote",
   coord: "45°48′N 15°58′E",
   availability: "Open for new projects. I usually reply within a couple of working days.",
@@ -403,7 +409,7 @@ A short welcome post. Maps are cool, and this is where the more interesting proj
 | `/portfolio/[slug]` | portfolio | `getStaticPaths` over non-draft entries, `params.slug = entry.id`. Render with `render(entry)`. |
 | `/blog` | blog | not draft, sort by `pubDate` descending. |
 | `/blog/[slug]` | blog | same pattern as portfolio detail. |
-| `/contact` | `site.ts` | email, location, socials, availability, `formAction`. |
+| `/contact` | `site.ts` | email and phone (both assembled in the browser by EmailLink and PhoneLink), location, socials, availability, `formAction`. |
 | `/404` | none | static. |
 
 ---
@@ -433,7 +439,7 @@ npm create astro@latest mabinogis -- --template minimal --typescript strict --no
 cd mabinogis
 npm install astro@^5 @fontsource/baskervville @fontsource/source-serif-4 @fontsource/ibm-plex-mono
 ```
-Then the user copies the supplied assets (Logo.astro, bg-1-blur.webp, portfolio images) into the paths in §1. Files to write: `astro.config.mjs`, `tsconfig.json`, `public/favicon.svg`, `public/robots.txt`, `src/styles/tokens.css`, `src/styles/global.css`, `src/data/site.ts`, `src/data/services.ts`, `src/content.config.ts`, the 3 portfolio and 3 blog sample files.
+Then the user copies the supplied assets (Logo.astro, bg-1-blur.webp, bg-1-original.webp, portfolio images) into the paths in §1. Files to write: `astro.config.mjs`, `tsconfig.json`, `public/favicon.svg`, `public/robots.txt`, `src/styles/tokens.css`, `src/styles/global.css`, `src/data/site.ts`, `src/data/services.ts`, `src/content.config.ts`, the 3 portfolio and 3 blog sample files.
 Check: `npm run dev` starts, the terminal shows no content-collection errors, and the default page loads.
 
 **Stage 2: chart components + test page**
@@ -441,12 +447,12 @@ Files: `Graticule`, `CompassRose`, `ScaleBar`, `Cartouche`, `SoundingsBackground
 Check: open `/dev`. Ticks on a card border, a compass, scale bar, cartouche, faint numbers, a divider, a tilted stamp.
 
 **Stage 3: layout shell**
-Files: `BaseLayout`, `Sidebar`, `MobileBar`, `NavItem`, `Footer`, and a placeholder `src/pages/index.astro` using BaseLayout with an `<h1>`.
+Files: `BaseLayout`, `Sidebar`, `MobileBar`, `NavItem`, `Footer`, `EmailLink` (the footer shows the email through it), and a placeholder `src/pages/index.astro` using BaseLayout with an `<h1>`.
 Check: fixed left sidebar with the logo and four nav entries on desktop; at width below 900px it becomes a top bar and the Menu button opens and closes the drawer; footer shows the cartouche and scale bar; fonts load.
 
 **Stage 4: hero and pillars**
 Files: `Hero`, `SectionHeader`, `PillarCard`; replace `index.astro` with Hero, then the pillars section (`id="pillars"`, with SoundingsBackground), using `.grid`.
-Check: full-screen blurred map hero, animated logo, frosted tagline card, stamp, scroll cue. Scrolling reveals a plain cream section with four pillar cards that tilt on hover.
+Check: full-screen map hero (blurred in the centre, sharp at the edges), animated logo on a soft glow, frosted tagline card, stamp, scroll cue. Scrolling reveals a plain cream section with four pillar cards that tilt on hover.
 
 **Stage 5: work, blog teaser, CTA (landing complete)**
 Files: `ProjectCard`, `PostCard`, `CTABand`; update `index.astro` to add RhumbDivider, Featured work (3 ProjectCards), Blog teaser (2 PostCards) and a CTABand ("Got a map problem?", link to `/contact`).
@@ -457,16 +463,16 @@ Files: `TagFilter`, `portfolio/index.astro`, `portfolio/[slug].astro`, `blog/ind
 Check: tag buttons filter the grid; cards open detail pages with image, tags, tools, body; blog list and post pages work; unknown URLs do not crash the build.
 
 **Stage 7: contact and 404**
-Files: `ContactRow`, `ContactForm`, `contact.astro`, `404.astro`.
-Check: email is a `mailto:` link; ArtStation and LinkedIn open in a new tab; the form has labelled fields and a honeypot; the availability note shows; `/nothing-here` shows the 404 page.
+Files: `ContactRow`, `ContactForm`, `PhoneLink`, `contact.astro`, `404.astro`.
+Check: the email and phone are assembled in the browser by `EmailLink` and `PhoneLink` (the built HTML never contains the full address or number; with JavaScript off they show a fallback); the email is a `mailto:` link and the phone a `tel:` link; ArtStation and LinkedIn open in a new tab; the form has labelled fields and a honeypot; the availability note shows; `/nothing-here` shows the 404 page.
 
 **Stage 8: README, cleanup, production build**
-Delete `src/pages/dev.astro`. Write `README.md` with: install and run commands; how to add a project, a post, a service and a nav page; and deployment notes: host on Cloudflare Pages (framework preset Astro, build command `npm run build`, output directory `dist`); domain registered at Hostinger with nameservers changed to the two Cloudflare nameservers; custom domain `www.mabinogis.com`; add a Cloudflare redirect rule from the apex `mabinogis.com` to `https://www.mabinogis.com`; replace `YOUR_ID` in `site.ts` with the Formspree form ID.
-Check: `npm run build` and `npm run preview` complete with no errors.
+Delete `src/pages/dev.astro`, `public/favicon.ico` (the Astro template's icon) and `AGENTS.md`. Replace `README.md` (file to write: `README.md` only) with: install and run commands; project structure; how to add a project, a post, a service and a nav page; how to change site details in `site.ts`; hero tuning variables; and deployment notes: host on Cloudflare Pages (framework preset Astro, build command `npm run build`, output directory `dist`, set `NODE_VERSION` if the build fails); domain registered at Hostinger with nameservers changed to the two Cloudflare nameservers; custom domain `www.mabinogis.com`; a Cloudflare redirect rule from the apex `mabinogis.com` to `https://www.mabinogis.com`; replace `YOUR_ID` in `site.ts` with the Formspree form ID; turn on Cloudflare Email Address Obfuscation.
+Check: `/dev` no longer exists; `npm run build` and `npm run preview` complete with no errors; every internal link on every page resolves.
 
 **Stage 9 (optional): hero parallax**
-One vanilla `<script>` in `Hero.astro`: on scroll, set `translateY(scrollY * 0.4 px)` on `.hero__bg` via `requestAnimationFrame`. Skip it entirely when `matchMedia("(prefers-reduced-motion: reduce)").matches`.
-Check: the background drifts slower than the page; with reduced motion enabled in the OS it stays still.
+One vanilla `<script>` in `Hero.astro`; no new files. `.hero__bg` uses `transform: translate3d(0, var(--parallax, 0px), 0) scale(1.08)` and `will-change: transform`. The script sets `--parallax` on `.hero__bg` to `scrolled * SPEED` px (`SPEED = 0.4`), where `scrolled` is `-hero.getBoundingClientRect().top` clamped between 0 and the hero height, updated through `requestAnimationFrame` from passive `scroll` and `resize` listeners. When `matchMedia("(prefers-reduced-motion: reduce)").matches`, it removes `--parallax` and does nothing.
+Check: the background drifts slower than the page; with reduced motion enabled in the OS it stays still; no gaps appear at the hero edges.
 
 ---
 
@@ -495,3 +501,11 @@ Check: the background drifts slower than the page; with reduced motion enabled i
 | Adds dependencies not listed | Only `astro@^5` and the three `@fontsource/*` packages. Nothing else without a `QUESTION:`. |
 | Uses `Math.random()` for the soundings | Use the seeded LCG so output is deterministic and the build is reproducible. |
 | Rewrites unchanged files "..." or leaves placeholders | Output every file in full, with real content. |
+| Card images render far too tall or stretched | Astro's `<Image>` writes `width` and `height` attributes. In CSS use `width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover;`. |
+| A date shows one day early | Format with `toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })`. |
+| Uses a component in the template without importing it ("X is not defined" crash) | Every component tag used in a template needs an import line in the frontmatter (`Image` from `astro:assets`, plus each `@/components/...` file). Before finishing, list every tag used and confirm each has an import. |
+| Puts `<Graticule />` or `<SoundingsBackground />` outside the card or section | They must be INSIDE the `position: relative` element they decorate (inside the `<article class="card">`, inside the section). |
+| Passes `class="..."` to a component such as `<Stamp>` and expects it to apply | Components do not forward `class` automatically. Wrap it: `<span class="project__stamp"><Stamp ... /></span>` and style the span. |
+| Card text turns vermilion | Global `a` is vermilion. A card link needs `color: var(--ink)` and `text-decoration: none`. |
+| Repeats hover tilt on the inner link | Tilt comes only from `.card--tilt:hover` on the card. Do not add `transform` on the inner link. |
+| Whole-card links break the layout | Use `<article class="card"><a class="..." href>...</a></article>`; the link is `display: block` and contains the card content. No nested links. |
