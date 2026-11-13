@@ -1,0 +1,167 @@
+---
+import "maplibre-gl/dist/maplibre-gl.css";
+import "@/styles/atlas.css";
+import AtlasLayout from "@/components/AtlasLayout.astro";
+import CompassRose from "@/components/CompassRose.astro";
+import { PERIODS, PERIOD_ORDER, TONES, TONE_LABEL } from "@/scripts/atlas/config";
+import sites from "@/data/atlas/pannonia-sites.json";
+
+const sources = sites.meta.sources;
+---
+<AtlasLayout
+  title="Atlas Pannoniae Praehistoricae"
+  description="An interactive map of prehistoric archaeological sites in Pannonia, the Dinaric Alps and along the Adriatic coast."
+>
+  <div class="atlas" id="atlas">
+    <header class="atlas__bar">
+      <a class="atlas__home" href="/" aria-label="Back to mabinogis.com">← <span class="atlas__home-text">mabinogis.com</span></a>
+      <div class="atlas__title">
+        <span class="atlas__compass"><CompassRose size="30px" /></span>
+        <h1>Atlas Pannoniae Praehistoricae</h1>
+      </div>
+      <button type="button" class="atlas__about" id="open-about">About &amp; sources</button>
+    </header>
+
+    <div class="atlas__main">
+      <aside class="panel" id="panel" data-state="peek" aria-label="Search, filters and results">
+        <button type="button" class="panel__handle" id="handle" aria-label="Open or close the panel" aria-expanded="false"><span></span></button>
+
+        <div class="panel__scroll" id="panel-scroll">
+          <!-- Explore -->
+          <section id="view-explore">
+            <div class="search">
+              <label class="sr-only" for="q">Search sites and cultures</label>
+              <input id="q" type="search" placeholder="Search sites, cultures, countries" autocomplete="off" />
+            </div>
+
+            <!-- Period roller: step up and down through the periods; the map follows at once -->
+            <div class="roller" role="group" aria-label="Period">
+              <button type="button" class="roller__arrow" id="roller-up" aria-label="Previous period">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6 15l6-6 6 6" /></svg>
+              </button>
+              <div class="roller__window" id="roller-window" role="listbox" aria-label="Period" tabindex="0">
+                <ul class="roller__list" id="roller-list"></ul>
+              </div>
+              <button type="button" class="roller__arrow" id="roller-down" aria-label="Next period">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" /></svg>
+              </button>
+            </div>
+
+            <div class="filters">
+              <label>Culture <select id="f-culture"><option value="all">All cultures</option></select></label>
+              <label>Country <select id="f-country"><option value="all">All countries</option></select></label>
+              <label>Basemap
+                <select id="f-base">
+                  <option value="archive">Archive map (19th-century style)</option>
+                  <option value="satellite">Satellite</option>
+                </select>
+              </label>
+              <button type="button" class="btn btn--ghost btn--small" id="reset">Reset filters</button>
+            </div>
+
+            <p class="count" id="count" role="status" aria-live="polite">Loading the atlas…</p>
+            <ul class="list" id="list"></ul>
+            <button type="button" class="btn btn--ghost btn--small" id="more" hidden>Show more</button>
+          </section>
+
+          <!-- Site details (filled by the script) -->
+          <section id="view-detail" hidden></section>
+
+          <!-- About and sources -->
+          <section id="view-about" class="about" hidden>
+            <button type="button" class="back" id="about-back">← Back</button>
+            <h2>About this atlas</h2>
+            <p>
+              A map of prehistoric archaeological sites in Pannonia, the Dinaric Alps and along the Adriatic coast,
+              from the Paleolithic to the Iron Age. Every site comes from two reference works:
+            </p>
+            <ul class="sources">
+              {sources.map((s) => <li>{s}</li>)}
+            </ul>
+
+            <h3>How to read the map</h3>
+            <ul>
+              <li><strong>Colour</strong> is the period. <strong>Early, mid and late</strong> are shown as lighter to darker tones of that colour.</li>
+              <li><strong>Size and stacking:</strong> earlier periods are drawn larger and lie underneath later ones, so a place used in several periods shows as rings.</li>
+              <li><strong>Shape</strong> is the culture, within its own period. The most numerous cultures of a period take a shape each; all others are circles.</li>
+            </ul>
+
+            <h3>What each record contains</h3>
+            <p>
+              A name, a period label, a culture (where the source gives one) and a position. The dataset does not
+              record which volume or page a point comes from, nor calendar dates or site types.
+              Positions are given to two decimal places, which is roughly one kilometre, so a point may sit
+              slightly away from the true site.
+            </p>
+
+            <h3>Not shown yet</h3>
+            <p>
+              The source data also contains Roman, Migration Period, Avar and medieval records, and a set of
+              Europe-wide Paleolithic art sites. They are not prehistoric Pannonia, so they are hidden from this map for now.
+            </p>
+
+            <h3>How the data was prepared</h3>
+            <ul>
+              <li>Records that repeat the same site, period and culture were merged into one.</li>
+              <li>Where a source label names two neighbouring periods (for example "Neolithic / Eneolithic transition"), the site is drawn in the earlier period, in its late tone.</li>
+              <li>Where a label names no phase, the mid tone is used.</li>
+              <li>The country is assigned from the point's position, using present-day borders (Natural Earth, public domain). Points close to a border, or plotted just offshore, are marked in the site details.</li>
+            </ul>
+
+            <h3>Map credits</h3>
+            <p>
+              Basemap © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>;
+              relief and satellite imagery from <a href="https://www.esri.com" target="_blank" rel="noopener noreferrer">Esri</a>
+              (relief: Esri, USGS, NOAA; imagery: Esri, Maxar, Earthstar Geographics and the GIS User Community).
+              Map software: <a href="https://maplibre.org" target="_blank" rel="noopener noreferrer">MapLibre GL JS</a>.
+            </p>
+          </section>
+        </div>
+      </aside>
+
+      <div class="map-wrap">
+        <div id="map" role="application" aria-label="Map of prehistoric archaeological sites"></div>
+
+        <!-- Legend -->
+        <div class="legend" id="legend" data-open="true">
+          <button type="button" class="legend__toggle" id="legend-toggle" aria-expanded="true" aria-controls="legend-body">Legend</button>
+          <div class="legend__body" id="legend-body">
+            <table class="palette" aria-label="Period and phase colours">
+              <thead>
+                <tr>
+                  <th scope="col">Period</th>
+                  {TONES.map((t) => <th scope="col">{TONE_LABEL[t]}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {PERIOD_ORDER.map((k) => (
+                  <tr>
+                    <th scope="row">{PERIODS[k].label}</th>
+                    {TONES.map((t) => (
+                      <td><span class="chip-color" style={`background:${PERIODS[k].colors[t]}`} title={`${PERIODS[k].label}, ${TONE_LABEL[t].toLowerCase()}`}></span></td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p class="legend__note">If the source does not name an early, mid or late phase, the mid tone is used.</p>
+            <p class="legend__note">Earlier periods are drawn larger and sit underneath later ones, so repeated use of a place shows as rings.</p>
+            <h3 id="shapes-title">Culture shapes</h3>
+            <ul class="legend__shapes" id="legend-shapes"></ul>
+          </div>
+        </div>
+
+        <!-- Attribution: always visible in the bottom-right corner -->
+        <p class="attrib" id="attrib"></p>
+      </div>
+    </div>
+  </div>
+
+  <noscript>
+    <p class="noscript">This atlas needs JavaScript. <a href="/">Back to mabinogis.com</a></p>
+  </noscript>
+
+  <script>
+    import "@/scripts/atlas/main";
+  </script>
+</AtlasLayout>

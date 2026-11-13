@@ -21,6 +21,7 @@ export const site = {
 export const nav: NavEntry[] = [
   { label: "Home",      href: "/",          coord: "27°59′18″N 86°55′31″E", enabled: true },
   { label: "Portfolio", href: "/portfolio", coord: "32°39′11″S 70°00′42″W", enabled: true },
+  { label: "Atlas",     href: "/atlas",     coord: "36°27′21″S 148°15′49″E", enabled: true },
   { label: "Blog",      href: "/blog",      coord: "63°04′09″N 151°00′23″W", enabled: true },
   { label: "Contact",   href: "/contact",   coord: "03°04′33″S 37°21′12″E", enabled: true },
   // reserved for future expansion (enabled: false = hidden from nav)

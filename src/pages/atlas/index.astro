@@ -1,0 +1,55 @@
+---
+import BaseLayout from "@/components/BaseLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import Graticule from "@/components/Graticule.astro";
+import Stamp from "@/components/Stamp.astro";
+import { atlasProjects } from "@/data/atlas/projects";
+import sites from "@/data/atlas/pannonia-sites.json";
+
+const counts: Record<string, number> = { pannonia: sites.meta.counts.visible };
+---
+<BaseLayout title="Atlas" description="Interactive maps of archaeological and historical subjects.">
+  <section class="section container">
+    <SectionHeader
+      tag="Atlas"
+      title="Atlas projects"
+      lead="Interactive maps, built from reference works and open data."
+    />
+    <div class="grid">
+      {atlasProjects.map((p) => (
+        <article class="card card--tilt project">
+          <a class="project__link" href={p.href}>
+            {p.status === "live" && counts[p.slug] && (
+              <span class="project__stamp"><Stamp text={`${counts[p.slug].toLocaleString("en")} sites`} tone="ink" tilt={4} /></span>
+            )}
+            <p class="mono-label">Interactive map</p>
+            <h3>{p.title}</h3>
+            <p class="project__summary">{p.summary}</p>
+            <span class="btn btn--ghost">Open the atlas</span>
+          </a>
+          <Graticule />
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .project__link {
+    display: block;
+    padding: var(--sp-5) var(--sp-4) var(--sp-4);
+    border-radius: var(--radius);
+    color: var(--ink);
+    text-decoration: none;
+    position: relative;
+  }
+  .project__stamp {
+    position: absolute;
+    top: var(--sp-3);
+    right: var(--sp-3);
+  }
+  .project__summary {
+    margin: 0 0 var(--sp-3);
+    color: var(--ink-soft);
+  }
+</style>

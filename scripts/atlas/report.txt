@@ -1,0 +1,50 @@
+ATLAS DATA REPORT
+============================================================
+Records in source file:            3065
+Hidden for now:                    369
+     134  Migration Period, not prehistoric
+      75  Medieval, 10th-11th century, not prehistoric
+      65  Roman period, not prehistoric
+      49  Roman period (Barbaricum), not prehistoric
+      46  Europe-wide Palaeolithic art, outside the study area
+Visible records before merging:    2696
+True duplicates merged:            286
+Sites shown on the map:            2410
+
+Sites per period:
+    bronze    858
+    eneo      279
+    iron      712
+    neo       379
+    paleo     182
+
+Tone not stated in the label (drawn in the mid tone): 979
+
+Country assignment:
+    inside a country, clear of borders: 1930
+    within 4 km of a border (flagged):    396
+    offshore, moved to nearest land (<= 12 km): 84
+    unresolved:                         0
+
+Sites per country:
+      734  Croatia
+      447  Serbia
+      410  Hungary
+      308  Bosnia and Herzegovina
+      293  Slovenia
+       80  North Macedonia
+       43  Montenegro
+       35  Italy
+       28  Kosovo
+       22  Romania
+        5  Austria
+        3  Greece
+        1  Slovakia
+        1  Albania
+
+Culture shapes per period (top 11 named cultures):
+  paleo: square=Gravettian, later blade industries (8), triangle=Gravettian, early blade industries (3), diamond=Jankovichien culture (3), star=Middle Palaeolithic (3), semicircle=Gravettian, pebble industries (2), pentagon=Mesolithic (2) ...
+  neo: square=Vinča culture (55), triangle=Hvar culture (49), diamond=Starčevačka (39), star=Danilo culture (37), semicircle=Impresso culture (35), pentagon=Sopot culture (33) ...
+  eneo: square=Vučedol culture (56), triangle=Baden culture (53), diamond=Lasinja culture (50), star=Kostolac culture (22), semicircle=Bubanj–Salcuța–Krivodol (18), pentagon=Tiszapolgár / Bodrogkeresztúr (17) ...
+  bronze: square=Dalmatinska kulturna skupina (74), triangle=Adriatic-West Balkan Early Bronze Age (65), diamond=Urnfield culture (47), star=Liburnska kulturna skupina (46), semicircle=Southeastern Alpine Middle Bronze Age (42), pentagon=West Balkan Middle Bronze Age (35) ...
+  iron: square=Scythian period (69), triangle=La Tène (Celtic) (58), diamond=liburnska grupa (50), star=glasinačka kultura (46), semicircle=dolenjska grupa (39), pentagon=moravsko–timočka oblast (36) ...

@@ -1,0 +1,3323 @@
+[
+ {
+  "name": "Ipolytölgyes",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 18.85,
+  "lat": 47.88,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Sződliget",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 19.12,
+  "lat": 47.74,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Felsőgöd",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 19.14,
+  "lat": 47.69,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Hatvan",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 19.68,
+  "lat": 47.66,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Vácszentlászló",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 19.55,
+  "lat": 47.55,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Dunaharaszti",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 19.08,
+  "lat": 47.35,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Újszilvás",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 19.85,
+  "lat": 47.38,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Újhartyán",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 19.38,
+  "lat": 47.22,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Lajosmizse",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 19.55,
+  "lat": 46.7,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Kiskunfélegyháza",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 19.85,
+  "lat": 46.7,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Sándorfalva",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.08,
+  "lat": 46.35,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Jánosszállás",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 19.92,
+  "lat": 46.3,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Madaras",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 19.3,
+  "lat": 46.05,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Ózd",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.3,
+  "lat": 48.22,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Terpes",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.15,
+  "lat": 48.02,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Sirok",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.18,
+  "lat": 47.94,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Kompolt",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.22,
+  "lat": 47.78,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Mezőszemere",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.55,
+  "lat": 47.78,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Tiszavalk",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.67,
+  "lat": 47.75,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Törökszentmiklós",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.42,
+  "lat": 47.18,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Tiszaföldvár",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.25,
+  "lat": 46.98,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Szarvas",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.55,
+  "lat": 46.86,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Gyoma",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.85,
+  "lat": 46.95,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Endrőd",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.82,
+  "lat": 46.92,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Örménykút",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.88,
+  "lat": 46.78,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Szentes",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.25,
+  "lat": 46.65,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Szegvár",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.22,
+  "lat": 46.58,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Nagymágocs",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.62,
+  "lat": 46.65,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Kardoskút",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.68,
+  "lat": 46.42,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Hódmezővásárhely",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.37,
+  "lat": 46.39,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Gibárt",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 21.15,
+  "lat": 48.35,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Sajókeresztúr",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.75,
+  "lat": 48.18,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Miskolc",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 20.77,
+  "lat": 48.09,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Tiszadob",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 21.02,
+  "lat": 48.01,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Polgár",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 21.12,
+  "lat": 47.86,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Nyíregyháza",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 21.72,
+  "lat": 47.95,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Lasztóc / Lastovce",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 21.68,
+  "lat": 48.52,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Tiszakanyár",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 21.82,
+  "lat": 48.22,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Kékcse",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 22.02,
+  "lat": 48.25,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Kisvárda",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 22.08,
+  "lat": 48.22,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Nagyvarsány",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 22.2,
+  "lat": 48.18,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Vásárosnamény",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 22.31,
+  "lat": 48.12,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Beregsurány",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 22.58,
+  "lat": 48.15,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Tiszakarád",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 21.52,
+  "lat": 48.25,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Csengersima",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 22.5,
+  "lat": 47.88,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Bujánháza / Boinești",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 23.25,
+  "lat": 47.78,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Apa",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 23.15,
+  "lat": 47.7,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Szolyva / Svaljava",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 22.98,
+  "lat": 48.55,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Árdánháza / Ardanovo",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "barbaricum_roman_period",
+  "lon": 23.12,
+  "lat": 48.42,
+  "hidden_reason": "Roman period (Barbaricum), not prehistoric"
+ },
+ {
+  "name": "Abaújvár",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.28,
+  "lat": 48.48,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Anarcs",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 22.05,
+  "lat": 48.22,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Ártánd",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.75,
+  "lat": 47.15,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Bagota / Bohatá",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.32,
+  "lat": 47.92,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Balotaszállás",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 19.65,
+  "lat": 46.45,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Bánkeszi / Bánov",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.25,
+  "lat": 48.05,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Beregszász / Berehovo",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 22.64,
+  "lat": 48.2,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Biharkeresztes",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.72,
+  "lat": 47.28,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Csekej / Čakajovce",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.08,
+  "lat": 48.32,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Csongrád-Felgyő",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.12,
+  "lat": 46.68,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Doboz",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.2,
+  "lat": 46.75,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Dunavecse-Fejéregyháza",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.98,
+  "lat": 46.91,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Edelény-Borsod",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.73,
+  "lat": 48.3,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Érsekújvár / Nové Zámky",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.16,
+  "lat": 47.98,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Esztergom",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.74,
+  "lat": 47.79,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Esztergom-Szentgyörgymező",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.75,
+  "lat": 47.8,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Fiad-Kérpuszta",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 17.82,
+  "lat": 46.65,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Galánta / Galanta",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 17.73,
+  "lat": 48.19,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Galgóc / Hlohovec",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 17.8,
+  "lat": 48.42,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Gégény",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.65,
+  "lat": 48.2,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Gyöngyöspata",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 19.78,
+  "lat": 47.82,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Győr",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 17.635,
+  "lat": 47.687,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Hajdúdorog",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.5,
+  "lat": 47.82,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Hajdúdorog-Gyúlás",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.52,
+  "lat": 47.83,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Hajdúdorog-Temetőhegy",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.53,
+  "lat": 47.84,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Halimba",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 17.48,
+  "lat": 47.08,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Hódmezővásárhely",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.37,
+  "lat": 46.39,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Ikervár",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 16.92,
+  "lat": 47.25,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Ipolykiskeszi / Malé Kosihy",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.62,
+  "lat": 47.85,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Izsák-Balázspuszta",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 19.35,
+  "lat": 46.8,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Kál",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.22,
+  "lat": 47.62,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Karos",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.8,
+  "lat": 48.35,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Kenézlő",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.62,
+  "lat": 48.28,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Kétpó",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.38,
+  "lat": 47.05,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Kiszombor",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.48,
+  "lat": 46.18,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Ladánybene-Benepuszta",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 19.62,
+  "lat": 47.02,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Madaras",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 19.3,
+  "lat": 46.05,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Magyarhomorog",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.42,
+  "lat": 47.15,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Majs",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.52,
+  "lat": 45.92,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Mosonmagyaróvár",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 17.27,
+  "lat": 47.85,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Nyíracsád",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.85,
+  "lat": 47.58,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Nyitra / Nitra",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.08,
+  "lat": 48.31,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Orosháza",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.66,
+  "lat": 46.56,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Perse / Prša",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 19.85,
+  "lat": 48.25,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Pusztaszentlászló",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 16.78,
+  "lat": 46.72,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Rakamaz",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.45,
+  "lat": 48.12,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Sály-Őrsúr vára",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.65,
+  "lat": 47.92,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Sály-Lator",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.68,
+  "lat": 47.9,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Sándorfalva",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.08,
+  "lat": 46.35,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Sárbogárd",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.62,
+  "lat": 46.9,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Sárrétudvari",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.45,
+  "lat": 47.29,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Sarud",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.52,
+  "lat": 47.62,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Somogyvár",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 17.62,
+  "lat": 46.58,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Sopron",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 16.58,
+  "lat": 47.68,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Sorokpolány",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 16.78,
+  "lat": 47.18,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Szabolcs",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.48,
+  "lat": 48.1,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Szakony",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 16.85,
+  "lat": 47.05,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Szeged-Algyő",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.15,
+  "lat": 46.28,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Szeghalom",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.16,
+  "lat": 47.02,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Székesfehérvár",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.41,
+  "lat": 47.19,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Szentmihályúr / Michal nad Žitavou",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.28,
+  "lat": 48.1,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Szered / Seredʹ",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 17.67,
+  "lat": 48.28,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Szolyva / Svaljava",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 22.98,
+  "lat": 48.55,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Tardoskedd / Tvrdošovce",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.05,
+  "lat": 48.1,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Tiszabezdéd",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 22.12,
+  "lat": 48.35,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Tiszaeszlár-Bashalom",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.46,
+  "lat": 48.16,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Tiszafüred",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.75,
+  "lat": 47.63,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Tiszanána",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.52,
+  "lat": 47.58,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Tiszasüly",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.35,
+  "lat": 47.45,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Törökkanizsa / Novi Kneževac",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 20.1,
+  "lat": 46.05,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Vágtornóc / Trnovec nad Váhom",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 17.88,
+  "lat": 48.15,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Vereb",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.55,
+  "lat": 47.32,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Visegrád",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.97,
+  "lat": 47.79,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Zemplén / Zemplín",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 21.8,
+  "lat": 48.42,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Zsitvabenesyő / Bešenov",
+  "culture": "Undetermined",
+  "label": "10th-11th century",
+  "layer": "carpathian_basin_burials_10_11c",
+  "lon": 18.22,
+  "lat": 48.12,
+  "hidden_reason": "Medieval, 10th-11th century, not prehistoric"
+ },
+ {
+  "name": "Sopron [Scarbantia]",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 16.58,
+  "lat": 47.68,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Lébény",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.387,
+  "lat": 47.737,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Csorna",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.25,
+  "lat": 47.62,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Győr [Arrabona]",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.635,
+  "lat": 47.687,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Répcetelek",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 16.95,
+  "lat": 47.45,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Ménfőcsanak",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.6,
+  "lat": 47.65,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Szombathely [Savaria]",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 16.62,
+  "lat": 47.23,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Pannonhalma",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.75,
+  "lat": 47.55,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Tatabánya",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.4,
+  "lat": 47.58,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Tokod",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.72,
+  "lat": 47.73,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Esztergom",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.74,
+  "lat": 47.79,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Dabronc",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.2,
+  "lat": 47.1,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Kápolnasnyék",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.75,
+  "lat": 47.22,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Csákvár [Floriana]",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.45,
+  "lat": 47.35,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Szabadbattyán",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.28,
+  "lat": 47.1,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Tác [Gorsium]",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.42,
+  "lat": 47.03,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Balatonszemes",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.777,
+  "lat": 46.81,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Kismáda",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 16.9,
+  "lat": 46.9,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Keszthely",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.24,
+  "lat": 46.77,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Sármellék",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.2,
+  "lat": 46.69,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Kilimán",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.05,
+  "lat": 46.65,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Hács",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.65,
+  "lat": 46.68,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Lengyeltóti",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.63,
+  "lat": 46.68,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Regöly",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.32,
+  "lat": 46.62,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Dunaújváros",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.93,
+  "lat": 46.96,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Törtel",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 19.82,
+  "lat": 47.1,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Dunapataj",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 19.05,
+  "lat": 46.65,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Mözs",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.72,
+  "lat": 46.32,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Hőgyész",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.38,
+  "lat": 46.52,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Bátaszék",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.72,
+  "lat": 46.18,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Pécs",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.23,
+  "lat": 46.07,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Heténypuszta [Iovia]",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.1,
+  "lat": 46.22,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Sziszek / Sisak [Siscia]",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 16.37,
+  "lat": 45.48,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Derecske",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 21.58,
+  "lat": 47.35,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Biharkeresztes",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 21.72,
+  "lat": 47.28,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Tiszaföldvár",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.25,
+  "lat": 46.98,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Örménykút",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.88,
+  "lat": 46.78,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Csongrád",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.14,
+  "lat": 46.71,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Gyula",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 21.28,
+  "lat": 46.65,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Sándorfalva",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.08,
+  "lat": 46.35,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Röszke",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.033,
+  "lat": 46.185,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Mezőkaszony / Kaszony",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 22.42,
+  "lat": 48.32,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Tiszakarád",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 21.52,
+  "lat": 48.25,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Balsa",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 21.42,
+  "lat": 48.18,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Gáva",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 21.68,
+  "lat": 48.1,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Mezőkeresztes",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.58,
+  "lat": 47.8,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Szihalom",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.53,
+  "lat": 47.78,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Mezőkövesd",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.57,
+  "lat": 47.81,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Tiszalök",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 21.378,
+  "lat": 48.016,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Tiszadob",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 21.02,
+  "lat": 48.01,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Szilágysomlyó / Șimleu Silvaniei",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 22.8,
+  "lat": 47.22,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Apahida",
+  "culture": "Migration Period",
+  "label": "5th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 23.7,
+  "lat": 46.8,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Bezencse",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 16.75,
+  "lat": 47.65,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Gyirót",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.5,
+  "lat": 47.68,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Hegykő",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 16.78,
+  "lat": 47.62,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Fertőszentmiklós",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 16.85,
+  "lat": 47.58,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Ménfőcsanak",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.6,
+  "lat": 47.65,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Szentendre",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 19.08,
+  "lat": 47.67,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Kápolnasnyék",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.75,
+  "lat": 47.22,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Várpalota",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.14,
+  "lat": 47.2,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Keszthely",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.24,
+  "lat": 46.77,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Vörs",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 17.266,
+  "lat": 46.662,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Tamási",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.28,
+  "lat": 46.63,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Kajdacs",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.62,
+  "lat": 46.75,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Gyönk",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.45,
+  "lat": 46.58,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Mohács",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.68,
+  "lat": 46.0,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Rácalmás",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 18.93,
+  "lat": 47.02,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Hódmezővásárhely",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.37,
+  "lat": 46.39,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Szeged-Szőreg",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.187,
+  "lat": 46.228,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Kiszombor",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.48,
+  "lat": 46.18,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Battonya",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 21.018,
+  "lat": 46.284,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Szentes",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.25,
+  "lat": 46.65,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Szarvas",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.55,
+  "lat": 46.86,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Kengyel",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.35,
+  "lat": 47.02,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Szolnok",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.183,
+  "lat": 47.168,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Egerlövő",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 20.85,
+  "lat": 47.78,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Derecske",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 21.58,
+  "lat": 47.35,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Marosvásárhely / Târgu Mureș",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 24.55,
+  "lat": 46.55,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Mezőbánd / Band",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 24.38,
+  "lat": 46.58,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Marosveresmart / Vereșmort",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 24.08,
+  "lat": 46.5,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Malomfalva / Morești",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 24.42,
+  "lat": 46.48,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Kisselyk / Șelca Mică",
+  "culture": "Gepid and Langobard",
+  "label": "6th century A.D.",
+  "layer": "migration_period_pannonia",
+  "lon": 24.32,
+  "lat": 46.02,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Leobersdorf",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 16.22,
+  "lat": 47.92,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Lébény",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 17.387,
+  "lat": 47.737,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Petőháza",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 16.88,
+  "lat": 47.62,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Ravažd",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 17.75,
+  "lat": 47.48,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Várpalota",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 18.14,
+  "lat": 47.2,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Környe",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 18.35,
+  "lat": 47.55,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Táp",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 17.78,
+  "lat": 47.52,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Csákberény",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 18.32,
+  "lat": 47.38,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Szentendre",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 19.08,
+  "lat": 47.67,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Vác",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 19.12,
+  "lat": 47.78,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Veresegyház",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 19.28,
+  "lat": 47.65,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Budakalász",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 19.06,
+  "lat": 47.62,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Budapest",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 19.04,
+  "lat": 47.498,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Jászapáti",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 20.15,
+  "lat": 47.5,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Alattyán",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 20.02,
+  "lat": 47.38,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Tiszafüred",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 20.75,
+  "lat": 47.63,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Kisköre",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 20.528,
+  "lat": 47.496,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Hortobágy",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 21.15,
+  "lat": 47.58,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Vásárosnamény",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 22.31,
+  "lat": 48.12,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Mátészalka",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 22.31,
+  "lat": 47.95,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Rákóczifalva",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 20.22,
+  "lat": 47.12,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Kunbábony",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 19.38,
+  "lat": 47.02,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Öcsöd",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 20.385,
+  "lat": 46.903,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Kunszentmárton",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 20.28,
+  "lat": 46.85,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Örménykút",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 20.88,
+  "lat": 46.78,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Hunya",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 20.78,
+  "lat": 46.72,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Bócsa",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 19.62,
+  "lat": 46.65,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Eperjes",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 20.52,
+  "lat": 46.62,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Szegvár",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 20.22,
+  "lat": 46.58,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Kecel",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 19.25,
+  "lat": 46.52,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Dunaújváros",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 18.93,
+  "lat": 46.96,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Rácalmás",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 18.93,
+  "lat": 47.02,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Iváncsa",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 18.87,
+  "lat": 47.12,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Igar",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 18.52,
+  "lat": 46.85,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Ozora",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 18.4,
+  "lat": 46.75,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Závod",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 18.4,
+  "lat": 46.32,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Szekszárd",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 18.7,
+  "lat": 46.35,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Kölked",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 18.7,
+  "lat": 45.98,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Csóka / Čoka",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 20.12,
+  "lat": 45.92,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Nagyszentmiklós / Sânnicolau Mare",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 20.63,
+  "lat": 46.07,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Homokrév / Mokrin",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 20.42,
+  "lat": 45.95,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Rehida",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 17.15,
+  "lat": 46.75,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Gyenesdiás",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 17.3,
+  "lat": 46.75,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Keszthely",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 17.24,
+  "lat": 46.77,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Zamárdi",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 17.95,
+  "lat": 46.88,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Sajtör",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 17.1,
+  "lat": 46.6,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Vörs",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 17.266,
+  "lat": 46.662,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Zalakomár",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 17.12,
+  "lat": 46.58,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Kolozsvár / Cluj-Napoca",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 23.6,
+  "lat": 46.77,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Someseni",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 23.65,
+  "lat": 46.8,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Mezőbánd / Band",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 24.38,
+  "lat": 46.58,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Maroskarna / Blandiana",
+  "culture": "Avar",
+  "label": "Avar period",
+  "layer": "migration_period_pannonia",
+  "lon": 23.58,
+  "lat": 45.92,
+  "hidden_reason": "Migration Period, not prehistoric"
+ },
+ {
+  "name": "Altamira",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": -4.615,
+  "lat": 43.378,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "El Castillo",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": -3.957,
+  "lat": 43.294,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "La Pasiega",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": -3.95,
+  "lat": 43.29,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Parralló",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": -3.5,
+  "lat": 37.85,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "La Pileta",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": -5.267,
+  "lat": 36.7,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Isturitz",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": -1.22,
+  "lat": 43.35,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Gargas",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 0.6,
+  "lat": 43.08,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Les Trois-Frères",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.2,
+  "lat": 42.95,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Niaux",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.6,
+  "lat": 42.82,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Aurignac",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 0.88,
+  "lat": 43.22,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Mas d'Azil",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.35,
+  "lat": 43.08,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Bedeilhac",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.52,
+  "lat": 42.85,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Lascaux",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.16,
+  "lat": 45.05,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Abri Labatut",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.02,
+  "lat": 44.98,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Rouffignac",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 0.9,
+  "lat": 45.02,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "La Madeleine",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.02,
+  "lat": 44.95,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "La Ferrassie",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.01,
+  "lat": 44.93,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Laugerie Haute",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.015,
+  "lat": 44.948,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Laussel",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.12,
+  "lat": 44.92,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Font-de-Gaume",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.03,
+  "lat": 44.935,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Combarelles",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.04,
+  "lat": 44.94,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Nancy",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.05,
+  "lat": 44.91,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Bernifal",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.1,
+  "lat": 44.915,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "La Mouthe",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 1.025,
+  "lat": 44.925,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Ebbou",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 4.42,
+  "lat": 44.42,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Bayol",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 4.35,
+  "lat": 44.02,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Gönnersdorf",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 7.28,
+  "lat": 50.45,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Vogelherd",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 10.2,
+  "lat": 48.55,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Balzi Rossi",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 7.55,
+  "lat": 43.78,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Chiozza",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 10.65,
+  "lat": 44.52,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Savignano",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 11.02,
+  "lat": 44.48,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Paglicci",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 15.68,
+  "lat": 41.75,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Romito",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 15.92,
+  "lat": 39.75,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Romanelli",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 18.42,
+  "lat": 40.02,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Racchio-Giglio",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 13.55,
+  "lat": 38.12,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Addaura",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 13.38,
+  "lat": 38.2,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Niscemi",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 13.35,
+  "lat": 38.18,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Levanzo",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 12.33,
+  "lat": 38.0,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Badanj",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 17.95,
+  "lat": 43.12,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Mala Gradina",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 17.5,
+  "lat": 44.5,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Predmostí",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 17.45,
+  "lat": 49.46,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Dolní Věstonice",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 16.65,
+  "lat": 48.88,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Willendorf",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 15.4,
+  "lat": 48.35,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Mezin",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 32.95,
+  "lat": 51.68,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Gagarino",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 38.85,
+  "lat": 52.32,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Kostjenki (Kostenki)",
+  "culture": "Undetermined",
+  "label": "Paleolithic",
+  "layer": "paleolithic_art_europe",
+  "lon": 39.03,
+  "lat": 51.39,
+  "hidden_reason": "Europe-wide Palaeolithic art, outside the study area"
+ },
+ {
+  "name": "Site 1",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 16.37,
+  "lat": 48.208,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 2",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 16.48,
+  "lat": 48.14,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 3",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 16.62,
+  "lat": 48.12,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 4",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 16.86,
+  "lat": 48.11,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 5",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 17.15,
+  "lat": 48.05,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 6",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 17.27,
+  "lat": 47.85,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 7",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 17.4,
+  "lat": 47.75,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 8",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 17.635,
+  "lat": 47.687,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 9",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 17.78,
+  "lat": 47.74,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 10",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.2,
+  "lat": 47.75,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 11",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.05,
+  "lat": 47.72,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 12",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.22,
+  "lat": 47.74,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 13",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.28,
+  "lat": 47.75,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 14",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.74,
+  "lat": 47.79,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 15",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.35,
+  "lat": 47.74,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 16",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.72,
+  "lat": 47.73,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 17",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 19.1,
+  "lat": 47.78,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 18",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.55,
+  "lat": 47.78,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 19",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 19.08,
+  "lat": 47.67,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 20",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 19.04,
+  "lat": 47.53,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 21",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 19.05,
+  "lat": 47.45,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 22",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.98,
+  "lat": 47.38,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 23",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.9,
+  "lat": 47.3,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 24",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.85,
+  "lat": 47.14,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 25",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.93,
+  "lat": 46.96,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 26",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.93,
+  "lat": 46.9,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 27",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.92,
+  "lat": 46.72,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 28",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.88,
+  "lat": 46.63,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 29",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.7,
+  "lat": 45.98,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 30",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.7,
+  "lat": 46.35,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 31",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.78,
+  "lat": 46.18,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 32",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.78,
+  "lat": 46.15,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 33",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.85,
+  "lat": 45.85,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 34",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.78,
+  "lat": 45.78,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 35",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.98,
+  "lat": 45.51,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 36",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.68,
+  "lat": 45.55,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 37",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.8,
+  "lat": 45.29,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 38",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 19.0,
+  "lat": 45.32,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 39",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 19.6,
+  "lat": 45.22,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 40",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 19.61,
+  "lat": 44.97,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 41",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 19.85,
+  "lat": 44.95,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 42",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 20.28,
+  "lat": 45.14,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 43",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 20.25,
+  "lat": 45.1,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 44",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 20.28,
+  "lat": 45.01,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 45",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 20.41,
+  "lat": 44.84,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 46",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 20.46,
+  "lat": 44.82,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 47",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 20.15,
+  "lat": 46.25,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 48",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.42,
+  "lat": 47.03,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 49",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 17.85,
+  "lat": 47.45,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 50",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 17.24,
+  "lat": 46.77,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 51",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 17.95,
+  "lat": 47.05,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 52",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 16.62,
+  "lat": 47.23,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 53",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 16.58,
+  "lat": 47.68,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 54",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 16.58,
+  "lat": 46.85,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 55",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 15.87,
+  "lat": 46.42,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 56",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 16.12,
+  "lat": 45.78,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 57",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 16.37,
+  "lat": 45.48,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 58",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 17.22,
+  "lat": 45.59,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 59",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.23,
+  "lat": 46.07,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 60",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.12,
+  "lat": 46.08,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 61",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 16.62,
+  "lat": 46.25,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 62",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.42,
+  "lat": 46.58,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 63",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.02,
+  "lat": 46.88,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 64",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 18.15,
+  "lat": 46.97,
+  "hidden_reason": "Roman period, not prehistoric"
+ },
+ {
+  "name": "Site 65",
+  "culture": "Undetermined",
+  "label": "Iron Age",
+  "layer": "roman_pannonia_pois",
+  "lon": 17.5,
+  "lat": 46.35,
+  "hidden_reason": "Roman period, not prehistoric"
+ }
+]
