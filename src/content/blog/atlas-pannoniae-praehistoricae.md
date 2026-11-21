@@ -4,17 +4,19 @@ description: "An interactive map of more than 2,400 prehistoric sites, from the 
 pubDate: 2026-11-11
 tags: ["Map design", "Geospatial databases"]
 # To show a screenshot at the top of the post, put the image in src/assets/blog/ and remove the # below:
-# cover: "../../assets/blog/atlas-pannonia.png"
-draft: true
+cover: "../../assets/blog/atlas-pannoniae-praehistoricae.png"
+draft: false
 ---
 **[Open the atlas →](/atlas/pannonia)**
 
-<!-- TODO: replace this placeholder with your own introduction: why this atlas, and what you hoped to find. -->
+For quite some time I was wondering about what would be the best way to build an interactive map on a static website, that would still allow for basic filtering by the user. For such a light project I definitely wanted to avoid hosting a database. Since I don't have a background in web development, I started from zero - Google. I saw that Astro is getting recommended left and right as a great framework for fast websites, heavy on content. So I gave it a shot.
 
 The Atlas Pannoniae Praehistoricae is an interactive map of prehistoric archaeological sites in Pannonia, the Dinaric Alps and along the Adriatic coast, from the Paleolithic to the Iron Age. It shows 2,410 sites, taken from two reference works:
 
 - *Praistorija Jugoslavenskih Zemalja*, vols. I–V (Akademija nauka i umjetnosti Bosne i Hercegovine)
 - *Hungarian Archaeology at the Turn of the Millennium* (Zsolt Visy et al.; Teleki László Foundation / Ministry of National Cultural Heritage)
+
+This specific topic was chosen for no special reason other than me being familiar with the two works from which the atlas is pulling information from. If I ever feel ambitious, I might expand this both to encompass newer publications for the region, as well as to cover the wider Central European region.
 
 ## How to read the map
 
@@ -40,4 +42,6 @@ The data was cleaned with a small script: repeated records were merged, every pe
 
 <!-- TODO: list what you plan to add, for example the later periods that are hidden for now, or more source works. -->
 
-**[Open the atlas →](/atlas/pannonia)**
+**[Open the atlas →](/atlas/pannonia)**  
+
+**[For more atlas projects →](/atlas)**  
