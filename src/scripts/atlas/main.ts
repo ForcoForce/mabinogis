@@ -52,15 +52,20 @@ async function start() {
   const sorted = [...data.sites].sort((a, b) => collator.compare(a.name, b.name));
 
   // ---- map ------------------------------------------------------------------
-  const atlasMap = new AtlasMap($("map"), data.sites, { onSelect: (id) => select(id) });
+  const atlasMap = new AtlasMap($("map"), $("basemap"), data.sites, { onSelect: (id) => select(id) });
   await atlasMap.whenReady();
   if (import.meta.env.DEV) (window as unknown as { __atlas: AtlasMap }).__atlas = atlasMap; // for testing only
 
   const panel = $("panel");
+  // the closed shelf is as tall as the period roller needs, so the roller is always in view
+  const peekHeight = () => {
+    const scroller = $("panel-scroll");
+    return $("roller").getBoundingClientRect().bottom - panel.getBoundingClientRect().top + scroller.scrollTop + 12;
+  };
   const sheet = initSheet(panel, $("handle"), (px) => {
     atlasMap.bottomInset = px;
     document.documentElement.style.setProperty("--sheet-px", `${px}px`);
-  });
+  }, peekHeight);
   const mobile = window.matchMedia("(max-width: 899px)");
 
   // ---- filtering --------------------------------------------------------------
@@ -282,7 +287,7 @@ async function start() {
       apply(state.query.length > 0);
     }, 140);
   });
-  $<HTMLInputElement>("q").addEventListener("focus", () => { if (mobile.matches && sheet.get() === "peek") sheet.set("half"); });
+  $<HTMLInputElement>("q").addEventListener("focus", () => { if (mobile.matches && sheet.get() !== "full") sheet.set("full"); });
 
   $<HTMLSelectElement>("f-culture").addEventListener("change", (e) => {
     state.culture = (e.target as HTMLSelectElement).value; state.shown = PAGE; apply(true);

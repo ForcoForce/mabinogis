@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 import BaseLayout from "@/components/BaseLayout.astro";
 import Stamp from "@/components/Stamp.astro";
+import Lightbox from "@/components/Lightbox.astro";
+import "@/styles/media.css";
 
 export async function getStaticPaths() {
   const entries = await getCollection("portfolio", ({ data }) => !data.draft);
@@ -31,7 +33,13 @@ const { title, summary, cover, tags, tools, year } = entry.data;
     </header>
 
     <div class="detail__cover">
-      <Image src={cover} alt={`${title} cover image`} width={1200} />
+      <Image
+        src={cover}
+        alt={`${title} cover image`}
+        widths={[800, 1200, 1600]}
+        sizes="(min-width: 900px) 800px, 100vw"
+        data-full={cover.src}
+      />
     </div>
 
     {tools.length > 0 && (
@@ -47,11 +55,12 @@ const { title, summary, cover, tags, tools, year } = entry.data;
       <Content />
     </div>
   </article>
+  <Lightbox />
 </BaseLayout>
 
 <style>
   .detail {
-    max-width: 52rem;
+    max-width: var(--media-width); /* one number for the text and every image: see styles/media.css */
   }
   .back {
     display: inline-block;
@@ -77,11 +86,10 @@ const { title, summary, cover, tags, tools, year } = entry.data;
     flex-wrap: wrap;
     gap: var(--sp-2);
   }
+  /* Fixed width, full height: the whole map is shown, never cropped */
   .detail__cover :global(img) {
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
     border: 1px solid var(--line);
     border-radius: var(--radius);
   }
@@ -129,7 +137,10 @@ const { title, summary, cover, tags, tools, year } = entry.data;
     background: none;
     font-size: 0.9em;
   }
+  /* Images inside the text: same width as the text column, full height */
   .prose :global(img) {
+    width: 100%;
+    height: auto;
     border-radius: var(--radius-sm);
   }
 </style>

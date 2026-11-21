@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import Stamp from "@/components/Stamp.astro";
 import Graticule from "@/components/Graticule.astro";
+import "@/styles/media.css";
 
 interface Props {
   title: string;
@@ -43,11 +44,10 @@ const { title, summary, cover, tags, year, href } = Astro.props;
     position: relative;
     margin-bottom: var(--sp-3);
   }
+  /* the image keeps its own proportions: nothing is cropped */
   .project__media :global(img) {
     width: 100%;
-    height: auto; /* overrides the height attribute Astro adds to <Image> */
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+    height: auto;
     border-radius: var(--radius-sm);
     border: 1px solid var(--line);
   }
@@ -72,3 +72,41 @@ const { title, summary, cover, tags, year, href } = Astro.props;
     padding-inline: var(--sp-1);
   }
 </style>
+
+<script>
+  // Staggered ("masonry") layout that keeps the reading order: each card goes into the shortest column,
+  // left to right, so the newest projects are at the top. Without JavaScript the CSS columns are used.
+  const MIN_COLUMN = 270;
+
+  function layout(box: HTMLElement) {
+    // only the cards: Astro may place a <script> tag inside this box, which must not take a column slot
+    const items = Array.from(box.querySelectorAll<HTMLElement>(":scope > .card")).filter((el) => !el.hidden);
+    const gap = parseFloat(getComputedStyle(box).columnGap) || 24;
+    const columns = Math.max(1, Math.floor((box.clientWidth + gap) / (MIN_COLUMN + gap)));
+    const width = (box.clientWidth - gap * (columns - 1)) / columns;
+    items.forEach((el) => (el.style.width = `${width}px`)); // set the width first, so the heights are measured correctly
+    const heights = new Array<number>(columns).fill(0);
+    for (const el of items) {
+      const col = heights.indexOf(Math.min(...heights));
+      el.style.left = `${col * (width + gap)}px`;
+      el.style.top = `${heights[col]}px`;
+      heights[col] += el.offsetHeight + gap;
+    }
+    box.style.height = `${Math.max(0, ...heights) - (items.length ? gap : 0)}px`;
+  }
+
+  document.querySelectorAll<HTMLElement>(".masonry").forEach((box) => {
+    box.classList.add("masonry--js");
+    let queued = false;
+    const schedule = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => { queued = false; layout(box); });
+    };
+    new ResizeObserver(schedule).observe(box);                                    // window and sidebar size changes
+    new MutationObserver(schedule).observe(box, { attributes: true, attributeFilter: ["hidden"], subtree: true }); // tag filter
+    box.querySelectorAll("img").forEach((img) => img.addEventListener("load", schedule));
+    document.fonts?.ready.then(schedule);
+    schedule();
+  });
+</script>

@@ -1,0 +1,27 @@
+/* Images on project pages, blog posts and project cards.
+   ONE number controls the width of the text column and of every image on those pages. */
+:root {
+  --media-width: 800px;
+}
+
+/* Project cards: the image keeps its own proportions, so nothing is cropped.
+   Without JavaScript the cards flow in columns of different heights. */
+.masonry {
+  column-width: 270px;
+  column-gap: var(--sp-4);
+}
+.masonry > * {
+  break-inside: avoid;
+  margin-bottom: var(--sp-4);
+}
+
+/* When the script is running it places the cards itself (see ProjectCard.astro),
+   so the newest project is top-left and the order reads across. */
+.masonry--js {
+  position: relative;
+  column-width: auto;
+}
+.masonry--js > * {
+  position: absolute;
+  margin: 0;
+}

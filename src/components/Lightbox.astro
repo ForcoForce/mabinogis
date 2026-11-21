@@ -1,0 +1,151 @@
+---
+// Click an image on a project page or in a blog post to see it full size.
+// It opens fitted to the window; click the image again for actual pixels (scroll to move around).
+import "@/styles/media.css";
+---
+<dialog class="lightbox" id="lightbox" aria-label="Full-size image">
+  <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Close">×</button>
+  <div class="lightbox__stage" id="lightbox-stage">
+    <img id="lightbox-img" alt="" />
+  </div>
+  <p class="lightbox__bar">
+    <span id="lightbox-caption"></span>
+    <span class="lightbox__hint" id="lightbox-hint">Click the image for actual size</span>
+  </p>
+</dialog>
+
+<style>
+  .lightbox {
+    width: 100vw;
+    height: 100dvh;
+    max-width: 100vw;
+    max-height: 100dvh;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--card);
+  }
+  .lightbox::backdrop {
+    background: rgba(39, 32, 26, 0.9);
+  }
+  .lightbox[open] {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+  .lightbox__close {
+    position: fixed;
+    top: 0.8rem;
+    right: 1rem;
+    z-index: 2;
+    width: 2.6rem;
+    height: 2.6rem;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: var(--card);
+    background: rgba(250, 247, 242, 0.14);
+    border: 1px solid rgba(250, 247, 242, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .lightbox__close:hover {
+    background: var(--vermilion);
+    border-color: var(--vermilion);
+  }
+  .lightbox__stage {
+    min-height: 0;
+    overflow: auto;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+  }
+  .lightbox__stage img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100dvh - 5.5rem);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    cursor: zoom-in;
+    border-radius: 4px;
+  }
+  /* actual size: no limits, the stage scrolls */
+  .lightbox[data-zoom="actual"] .lightbox__stage {
+    place-items: start center;
+  }
+  .lightbox[data-zoom="actual"] .lightbox__stage img {
+    max-width: none;
+    max-height: none;
+    cursor: zoom-out;
+  }
+  .lightbox__bar {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0;
+    padding: 0.6rem 1rem 0.9rem;
+    font-size: 0.9rem;
+  }
+  .lightbox__hint {
+    flex: none;
+    font-family: var(--font-mono);
+    font-size: var(--fs-0);
+    letter-spacing: 0.06em;
+    opacity: 0.75;
+  }
+</style>
+
+<script>
+  const dialog = document.getElementById("lightbox") as HTMLDialogElement | null;
+  const stage = document.getElementById("lightbox-stage");
+  const big = document.getElementById("lightbox-img") as HTMLImageElement | null;
+  const caption = document.getElementById("lightbox-caption");
+  const hint = document.getElementById("lightbox-hint");
+
+  // images that can be opened: the cover, and any image inside the text
+  const SELECTOR = ".detail__cover img, .post__cover img, .prose img";
+
+  if (dialog && stage && big && caption && hint) {
+    const setZoom = (mode: "fit" | "actual") => {
+      dialog.dataset.zoom = mode;
+      hint.textContent = mode === "fit" ? "Click the image for actual size" : "Click the image to fit the window";
+    };
+
+    const open = (img: HTMLImageElement) => {
+      // data-full is the original file; otherwise use the image as it is on the page
+      big.src = img.dataset.full || img.currentSrc || img.src;
+      big.alt = img.alt;
+      caption.textContent = img.alt;
+      setZoom("fit");
+      stage.scrollTo(0, 0);
+      document.body.style.overflow = "hidden";
+      dialog.showModal();
+    };
+
+    const close = () => dialog.close();
+
+    document.querySelectorAll<HTMLImageElement>(SELECTOR).forEach((img) => {
+      img.tabIndex = 0;
+      img.setAttribute("role", "button");
+      img.setAttribute("aria-label", `Open full-size image${img.alt ? `: ${img.alt}` : ""}`);
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", () => open(img));
+      img.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          open(img);
+        }
+      });
+    });
+
+    big.addEventListener("click", () => setZoom(dialog.dataset.zoom === "actual" ? "fit" : "actual"));
+    document.getElementById("lightbox-close")?.addEventListener("click", close);
+    // a click on the dark area around the image closes it
+    stage.addEventListener("click", (e) => {
+      if (e.target === stage) close();
+    });
+    dialog.addEventListener("close", () => {
+      document.body.style.overflow = "";
+      big.removeAttribute("src");
+    });
+  }
+</script>

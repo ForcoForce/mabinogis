@@ -23,7 +23,7 @@ const tags = [...new Set(projects.flatMap((entry) => entry.data.tags))].sort();
     ) : (
       <>
         <TagFilter tags={tags} targetId="project-grid" />
-        <div class="grid" id="project-grid">
+        <div class="masonry" id="project-grid">
           {projects.map((entry) => (
             <ProjectCard
               title={entry.data.title}

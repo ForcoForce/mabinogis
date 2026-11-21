@@ -86,10 +86,120 @@
   position: relative;
   min-height: 0;
   overflow: hidden;
+  isolation: isolate; /* keeps the paper texture's blend mode inside the map area */
 }
 #map {
   position: absolute;
   inset: 0;
+  z-index: 2; /* markers, above the tiles and the paper texture */
+}
+
+/* =====================================================================
+   BASEMAP LOOK
+   Tiles are drawn by a second map underneath the markers, so these CSS
+   filters colour only the tiles. The values are the AI Studio ones.
+   The basemap is chosen by data-base="archive | pale | satellite" on .map-wrap.
+   ===================================================================== */
+.basemap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: #f4ecdc; /* paper colour behind the tiles */
+}
+.basemap canvas {
+  transition: opacity 0.3s;
+}
+.map-wrap[data-base="archive"] .basemap canvas {
+  filter: sepia(0.65) saturate(0.4) contrast(0.92) brightness(1.02) hue-rotate(-15deg);
+  opacity: 0.85;
+}
+.map-wrap[data-base="pale"] .basemap canvas {
+  filter: sepia(0.25) saturate(0.35) contrast(0.98) brightness(1.04);
+  opacity: 0.9;
+}
+
+/* parchment paper: a warm cream gradient plus a fine dot grain, multiplied over the tiles.
+   Opacity 1 is what the AI Studio version really showed (its 0.35 / 0.15 settings never took effect);
+   lower it here if you want a lighter paper. Off for the satellite basemap. */
+.parchment {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  background-image:
+    radial-gradient(rgba(180, 160, 130, 0.12) 1px, transparent 1px),
+    linear-gradient(rgba(248, 243, 232, 0.22), rgba(243, 236, 220, 0.32));
+  background-size: 16px 16px, auto;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.map-wrap[data-base="satellite"] .parchment {
+  opacity: 0;
+}
+
+/* antique frame */
+.map-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  border: 5px solid rgba(203, 188, 160, 0.5);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* compass rose watermark, top right, beside the zoom buttons */
+.compass-mark {
+  position: absolute;
+  top: 12px;
+  right: 52px;
+  z-index: 4;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.4rem 0.5rem 0.3rem;
+  opacity: 0.8;
+  pointer-events: none;
+  user-select: none;
+  background: var(--card-frost);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+.compass-mark span {
+  margin-top: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.22em;
+  color: var(--ink-soft);
+}
+.compass-mark svg {
+  display: block;
+}
+.cm-ring {
+  fill: none;
+  stroke: var(--ink-soft);
+  stroke-width: 1.2;
+  stroke-dasharray: 3 2;
+}
+.cm-red {
+  fill: var(--vermilion);
+}
+.cm-ink {
+  fill: var(--ink-soft);
+}
+.cm-letter {
+  font-family: var(--font-head);
+  fill: var(--ink-soft);
+}
+.cm-letter--n {
+  font-weight: 700;
+  fill: var(--vermilion);
+}
+@media (min-width: 640px) {
+  .compass-mark {
+    display: flex;
+  }
 }
 
 /* ---------- panel ---------- */
@@ -121,7 +231,7 @@
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
 }
-.search input {
+.search {
   margin-bottom: var(--sp-3);
 }
 
@@ -534,7 +644,7 @@
   }
 
   .panel {
-    --state-h: 15dvh;
+    --state-h: var(--peek-h, 26dvh); /* measured by the script so the whole roller shows */
     position: absolute;
     left: 0;
     right: 0;
@@ -548,10 +658,10 @@
     transition: height 0.25s var(--ease);
   }
   .panel[data-state="half"] {
-    --state-h: 52dvh;
+    --state-h: var(--half-h, 60dvh);
   }
   .panel[data-state="full"] {
-    --state-h: 88dvh;
+    --state-h: var(--full-h, 88dvh);
   }
   .panel--dragging {
     transition: none;
@@ -578,6 +688,32 @@
   }
   .panel__scroll {
     padding-top: 0;
+  }
+
+  /* a more compact roller, so the closed shelf can show all of it */
+  .roller {
+    --row: 40px;
+    margin-bottom: var(--sp-2);
+  }
+  .roller__arrow {
+    height: 26px;
+  }
+  .roller__item {
+    font-size: 1rem;
+  }
+  .roller__item--current {
+    font-size: 1.15rem;
+  }
+
+  /* culture and country side by side; basemap and reset on the next row */
+  .filters {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--sp-2);
+  }
+  .filters .btn--small {
+    align-self: end;
+    justify-self: stretch;
+    text-align: center;
   }
 
   /* legend: a small button top-left; it opens over the map */

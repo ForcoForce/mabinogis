@@ -29,13 +29,8 @@ const sources = sites.meta.sources;
         <div class="panel__scroll" id="panel-scroll">
           <!-- Explore -->
           <section id="view-explore">
-            <div class="search">
-              <label class="sr-only" for="q">Search sites and cultures</label>
-              <input id="q" type="search" placeholder="Search sites, cultures, countries" autocomplete="off" />
-            </div>
-
             <!-- Period roller: step up and down through the periods; the map follows at once -->
-            <div class="roller" role="group" aria-label="Period">
+            <div class="roller" id="roller" role="group" aria-label="Period">
               <button type="button" class="roller__arrow" id="roller-up" aria-label="Previous period">
                 <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6 15l6-6 6 6" /></svg>
               </button>
@@ -52,11 +47,17 @@ const sources = sites.meta.sources;
               <label>Country <select id="f-country"><option value="all">All countries</option></select></label>
               <label>Basemap
                 <select id="f-base">
-                  <option value="archive">Archive map (19th-century style)</option>
-                  <option value="satellite">Satellite</option>
+                  <option value="archive">Faded 19th-century archive</option>
+                  <option value="pale">Minimalist pale atlas</option>
+                  <option value="satellite">Satellite terrain</option>
                 </select>
               </label>
               <button type="button" class="btn btn--ghost btn--small" id="reset">Reset filters</button>
+            </div>
+
+            <div class="search">
+              <label class="sr-only" for="q">Search sites and cultures</label>
+              <input id="q" type="search" placeholder="Search sites, cultures, countries" autocomplete="off" />
             </div>
 
             <p class="count" id="count" role="status" aria-live="polite">Loading the atlas…</p>
@@ -119,8 +120,31 @@ const sources = sites.meta.sources;
         </div>
       </aside>
 
-      <div class="map-wrap">
+      <div class="map-wrap" data-base="archive">
+        <!-- 1) tiles, coloured by CSS filters  2) paper texture  3) markers on a transparent map -->
+        <div id="basemap" class="basemap" aria-hidden="true"></div>
+        <div class="parchment" aria-hidden="true"></div>
         <div id="map" role="application" aria-label="Map of prehistoric archaeological sites"></div>
+
+        <!-- thin antique frame around the map -->
+        <div class="map-frame" aria-hidden="true"></div>
+
+        <!-- compass rose watermark (hidden on small screens) -->
+        <div class="compass-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="44" height="44">
+            <circle cx="50" cy="50" r="46" class="cm-ring" />
+            <polygon points="50,6 54,42 50,46 46,42" class="cm-red" />
+            <polygon points="50,94 54,58 50,54 46,58" class="cm-ink" />
+            <polygon points="6,50 42,46 46,50 42,54" class="cm-ink" />
+            <polygon points="94,50 58,46 54,50 58,54" class="cm-ink" />
+            <circle cx="50" cy="50" r="3" class="cm-red" />
+            <text x="50" y="19" text-anchor="middle" font-size="11" class="cm-letter cm-letter--n">N</text>
+            <text x="50" y="91" text-anchor="middle" font-size="9" class="cm-letter">S</text>
+            <text x="14" y="53" text-anchor="middle" font-size="9" class="cm-letter">W</text>
+            <text x="87" y="53" text-anchor="middle" font-size="9" class="cm-letter">E</text>
+          </svg>
+          <span>PANNONIA</span>
+        </div>
 
         <!-- Legend -->
         <div class="legend" id="legend" data-open="true">

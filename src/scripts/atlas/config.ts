@@ -96,13 +96,16 @@ export const REGION_BOUNDS: [[number, number], [number, number]] = [[12.8, 41.0]
 export const MAX_BOUNDS: [[number, number], [number, number]] = [[2, 33], [38, 57]];
 
 export const MIN_ZOOM = 5;
-export const MAX_ZOOM = 14;
+export const MAX_ZOOM = 15;
+
+const PAPER_CREDITS = [
+  { text: "© OpenStreetMap contributors", href: "https://www.openstreetmap.org/copyright" },
+  { text: "Relief: Esri, USGS, NOAA", href: "https://www.esri.com" },
+];
 
 export const BASEMAP_CREDITS = {
-  archive: [
-    { text: "© OpenStreetMap contributors", href: "https://www.openstreetmap.org/copyright" },
-    { text: "Relief: Esri, USGS, NOAA", href: "https://www.esri.com" },
-  ],
+  archive: PAPER_CREDITS,
+  pale: PAPER_CREDITS,
   satellite: [
     { text: "Imagery: Esri, Maxar, Earthstar Geographics and the GIS User Community", href: "https://www.esri.com" },
     { text: "© OpenStreetMap contributors", href: "https://www.openstreetmap.org/copyright" },

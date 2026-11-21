@@ -1,13 +1,13 @@
 ---
 title: "Atlas Pannoniae Praehistoricae: a map of prehistoric Pannonia"
-description: "An interactive map sandbox project of more than 2,400 prehistoric sites, from the Pannonian Basin to the Adriatic coast, built from two reference works."
+description: "An interactive map of more than 2,400 prehistoric sites, from the Pannonian Basin to the Adriatic coast, built from two reference works."
 pubDate: 2026-11-11
 tags: ["Map design", "Geospatial databases"]
 # To show a screenshot at the top of the post, put the image in src/assets/blog/ and remove the # below:
-cover: "../../assets/blog/atlas-pannoniae-praehistoricae.png"
-draft: false
+# cover: "../../assets/blog/atlas-pannonia.png"
+draft: true
 ---
-**[Open the Atlas Pannoniae Praehistoricae →](/atlas/pannonia)**
+**[Open the atlas →](/atlas/pannonia)**
 
 <!-- TODO: replace this placeholder with your own introduction: why this atlas, and what you hoped to find. -->
 
@@ -40,7 +40,4 @@ The data was cleaned with a small script: repeated records were merged, every pe
 
 <!-- TODO: list what you plan to add, for example the later periods that are hidden for now, or more source works. -->
 
-**[Open the Atlas Pannoniae Praehistoricae →](/atlas/pannonia)**  
-
-
-**[More atlas projects →](/atlas)**
+**[Open the atlas →](/atlas/pannonia)**

@@ -5,7 +5,7 @@ import type { Site } from "./data";
 import { PERIODS, REGION_BOUNDS, MAX_BOUNDS, MIN_ZOOM, MAX_ZOOM, HOVER_SCALE, type ShapeName } from "./config";
 import { shapeImageData } from "./symbols";
 
-export type BaseMap = "archive" | "satellite";
+export type BaseMap = "archive" | "pale" | "satellite";
 
 export interface MapHandlers {
   onSelect: (id: string) => void;
@@ -16,15 +16,11 @@ const IMG_LOGICAL = 16;      // logical size of one image; icon-size scales from
 const SHAPE_FILL = 0.42 / 0.36; // markers are drawn smaller inside their image (room for the shadow); this evens it out
 
 /**
- * The look of the "archive" basemap. Every value can be tuned here.
- * The OpenStreetMap tiles are turned to grey, then a warm cream wash tints them like aged paper.
+ * Hillshade strength for the two paper-style basemaps.
+ * The sepia, fading and paper texture are CSS filters in src/styles/atlas.css
+ * (section "BASEMAP LOOK"), exactly as in the AI Studio version.
  */
-export const LOOK = {
-  paper: "#e0c792",                                  // colour behind the tiles
-  osm: { saturation: -0.5, contrast: 0.15, brightnessMin: 0.05, brightnessMax: 0.85, opacity: 1 }, // -1 = fully grey; try -0.9 to keep a hint of colour
-  wash: { color: "#e5d5a9", opacity: 0.25 },         // cream-yellow tint over the map; raise the opacity for a more uniform paper look
-  relief: { opacity: 0.75 },                          // Esri hillshade
-};
+const RELIEF_OPACITY = { archive: 0.28, pale: 0.18 };
 
 const iconName = (shape: ShapeName, color: string) => `${shape}|${color}`;
 
@@ -35,7 +31,11 @@ function sizeExpression(k: number): maplibregl.DataDrivenPropertyValueSpecificat
 }
 
 export class AtlasMap {
+  /** the map the visitor interacts with: it only draws the markers, on a transparent background */
   readonly map: maplibregl.Map;
+  /** a second map underneath that only draws the tiles, so CSS filters can colour the tiles without touching the markers */
+  readonly base: maplibregl.Map;
+  private baseContainer: HTMLElement;
   private hover: maplibregl.Popup;
   private sitesById = new Map<string, Site>();
   private ready: Promise<void>;
@@ -45,12 +45,28 @@ export class AtlasMap {
   private hoverK = 1;
   private hoverFrame = 0;
 
-  constructor(container: HTMLElement, sites: Site[], private handlers: MapHandlers) {
+  constructor(container: HTMLElement, baseContainer: HTMLElement, sites: Site[], private handlers: MapHandlers) {
     sites.forEach((s) => this.sitesById.set(s.id, s));
     maplibregl.setWorkerUrl(workerUrl);
+    this.baseContainer = baseContainer;
 
-    this.map = new maplibregl.Map({
-      container,
+    const camera = {
+      bounds: REGION_BOUNDS,
+      fitBoundsOptions: { padding: 24 },
+      minZoom: MIN_ZOOM,
+      maxZoom: MAX_ZOOM,
+      maxBounds: MAX_BOUNDS,
+      attributionControl: false as const,
+      dragRotate: false,
+      pitchWithRotate: false,
+      touchPitch: false,
+    };
+
+    // 1) the tiles: OpenStreetMap, Esri hillshade, and the satellite set for the third basemap
+    this.base = new maplibregl.Map({
+      container: baseContainer,
+      interactive: false,
+      ...camera,
       style: {
         version: 8,
         sources: {
@@ -58,29 +74,21 @@ export class AtlasMap {
           relief: { type: "raster", tiles: ["https://server.arcgisonline.com/ArcGIS/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}"], tileSize: 256, maxzoom: 13 },
           imagery: { type: "raster", tiles: ["https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"], tileSize: 256, maxzoom: 18 },
           places: { type: "raster", tiles: ["https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}"], tileSize: 256, maxzoom: 18 },
-          wash: {
-            type: "geojson",
-            data: { type: "Feature", properties: {}, geometry: { type: "Polygon", coordinates: [[[-179.9, -85], [179.9, -85], [179.9, 85], [-179.9, 85], [-179.9, -85]]] } },
-          },
         },
         layers: [
-          { id: "paper", type: "background", paint: { "background-color": LOOK.paper } },
+          { id: "osm", type: "raster", source: "osm", paint: { "raster-opacity": 1 } },
+          { id: "relief", type: "raster", source: "relief", paint: { "raster-opacity": RELIEF_OPACITY.archive } },
           { id: "imagery", type: "raster", source: "imagery", paint: { "raster-opacity": 0 } },
-          { id: "osm", type: "raster", source: "osm", paint: { "raster-saturation": LOOK.osm.saturation, "raster-contrast": LOOK.osm.contrast, "raster-brightness-min": LOOK.osm.brightnessMin, "raster-brightness-max": LOOK.osm.brightnessMax, "raster-opacity": LOOK.osm.opacity } },
-          { id: "relief", type: "raster", source: "relief", paint: { "raster-opacity": LOOK.relief.opacity } },
-          { id: "wash", type: "fill", source: "wash", paint: { "fill-color": LOOK.wash.color, "fill-opacity": LOOK.wash.opacity } },
           { id: "places", type: "raster", source: "places", paint: { "raster-opacity": 0 } },
         ],
       },
-      bounds: REGION_BOUNDS,
-      fitBoundsOptions: { padding: 24 },
-      minZoom: MIN_ZOOM,
-      maxZoom: MAX_ZOOM,
-      maxBounds: MAX_BOUNDS,
-      attributionControl: false,
-      dragRotate: false,
-      pitchWithRotate: false,
-      touchPitch: false,
+    });
+
+    // 2) the markers: no tiles, transparent, and it handles every click and gesture
+    this.map = new maplibregl.Map({
+      container,
+      style: { version: 8, sources: {}, layers: [] },
+      ...camera,
     });
     this.map.touchZoomRotate.disableRotation();
     this.map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
@@ -88,10 +96,15 @@ export class AtlasMap {
 
     this.hover = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 12, className: "atlas-hover" });
 
+    // the tile map follows the marker map frame by frame
+    this.map.on("move", () => this.syncBase());
+    this.map.on("resize", () => this.syncBase());
+
     this.ready = new Promise((resolve) => {
       this.map.on("load", () => {
         this.addSites(sites);
         this.bindEvents();
+        this.syncBase();
         resolve();
       });
     });
@@ -99,6 +112,13 @@ export class AtlasMap {
 
   whenReady() {
     return this.ready;
+  }
+
+  /** Copy the camera of the marker map to the tile map, and draw it right away so they never drift apart. */
+  private syncBase() {
+    const m = this.map;
+    this.base.jumpTo({ center: m.getCenter(), zoom: m.getZoom(), bearing: 0, pitch: 0, padding: m.getPadding() });
+    this.base.redraw();
   }
 
   /** Register one image per (shape, colour) pair that actually occurs, then add the layers. */
@@ -273,16 +293,18 @@ export class AtlasMap {
   }
 
   setBase(mode: BaseMap) {
-    const m = this.map;
+    const b = this.base;
     const sat = mode === "satellite";
-    m.setPaintProperty("imagery", "raster-opacity", sat ? 1 : 0);
-    m.setPaintProperty("places", "raster-opacity", sat ? 0.9 : 0);
-    m.setPaintProperty("osm", "raster-opacity", sat ? 0 : LOOK.osm.opacity);
-    m.setPaintProperty("relief", "raster-opacity", sat ? 0 : LOOK.relief.opacity);
-    m.setPaintProperty("wash", "fill-opacity", sat ? 0 : LOOK.wash.opacity);
+    b.setPaintProperty("osm", "raster-opacity", sat ? 0 : 1);
+    b.setPaintProperty("relief", "raster-opacity", sat ? 0 : RELIEF_OPACITY[mode as "archive" | "pale"]);
+    b.setPaintProperty("imagery", "raster-opacity", sat ? 1 : 0);
+    b.setPaintProperty("places", "raster-opacity", sat ? 0.9 : 0);
+    // the CSS filters and the paper overlay are switched by this attribute (see atlas.css)
+    this.baseContainer.parentElement?.setAttribute("data-base", mode);
   }
 
   resize() {
     this.map.resize();
+    this.base.resize();
   }
 }

@@ -1,12 +1,17 @@
 // Mobile bottom sheet: three heights, a drag handle, and a tap to step through them.
+// The closed ("peek") height is measured so the whole period roller is always visible.
 // On desktop the panel is a normal left column and this does nothing.
 
 export type SheetState = "peek" | "half" | "full";
 const ORDER: SheetState[] = ["peek", "half", "full"];
-// share of the screen height: the closed sheet keeps 15% of the screen on view
-const SHARE: Record<SheetState, number> = { peek: 0.15, half: 0.52, full: 0.88 };
+// share of the screen height for the open heights
+const SHARE = { half: 0.6, full: 0.88 };
 
-export function initSheet(panel: HTMLElement, handle: HTMLElement, onChange: (px: number) => void) {
+/**
+ * `getPeek` returns the height (px) needed to show the roller.
+ * `onChange` receives the current sheet height in px (0 on desktop).
+ */
+export function initSheet(panel: HTMLElement, handle: HTMLElement, onChange: (px: number) => void, getPeek: () => number) {
   const mobile = window.matchMedia("(max-width: 899px)");
   let state: SheetState = "peek";
   let startY = 0;
@@ -15,11 +20,18 @@ export function initSheet(panel: HTMLElement, handle: HTMLElement, onChange: (px
   let moved = false;
   let swallowClick = false;
 
-  const heightFor = (s: SheetState) => Math.round(window.innerHeight * SHARE[s]);
+  // never taller than 45% of the screen, so the map stays usable
+  const peek = () => Math.min(Math.round(getPeek()), Math.round(window.innerHeight * 0.45));
+  const heightFor = (s: SheetState) =>
+    s === "peek" ? peek() : Math.max(Math.round(window.innerHeight * SHARE[s]), peek() + 140);
 
   const apply = (s: SheetState) => {
     state = s;
     panel.dataset.state = s;
+    // the script is the single source for all three heights; the stylesheet just uses them
+    panel.style.setProperty("--peek-h", `${peek()}px`);
+    panel.style.setProperty("--half-h", `${heightFor("half")}px`);
+    panel.style.setProperty("--full-h", `${heightFor("full")}px`);
     panel.style.removeProperty("--sheet-h");
     handle.setAttribute("aria-expanded", String(s !== "peek"));
     onChange(mobile.matches ? heightFor(s) : 0);
@@ -38,7 +50,7 @@ export function initSheet(panel: HTMLElement, handle: HTMLElement, onChange: (px
     if (!dragging) return;
     const dy = startY - e.clientY;
     if (Math.abs(dy) > 4) moved = true;
-    const h = Math.min(window.innerHeight * 0.92, Math.max(window.innerHeight * 0.12, startH + dy));
+    const h = Math.min(window.innerHeight * 0.92, Math.max(peek() * 0.8, startH + dy));
     panel.style.setProperty("--sheet-h", `${h}px`);
   });
   const next = () => apply(ORDER[(ORDER.indexOf(state) + 1) % ORDER.length]);
@@ -62,7 +74,10 @@ export function initSheet(panel: HTMLElement, handle: HTMLElement, onChange: (px
     next();
   });
 
-  window.addEventListener("resize", () => onChange(mobile.matches ? heightFor(state) : 0));
+  // sizes can change when fonts load or the screen turns
+  const refresh = () => apply(state);
+  window.addEventListener("resize", refresh);
+  document.fonts?.ready.then(refresh);
   apply("peek");
   return { set: apply, get: () => state };
 }

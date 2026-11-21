@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 import BaseLayout from "@/components/BaseLayout.astro";
+import Lightbox from "@/components/Lightbox.astro";
+import "@/styles/media.css";
 
 export async function getStaticPaths() {
   const entries = await getCollection("blog", ({ data }) => !data.draft);
@@ -35,7 +37,13 @@ const format = (date: Date) =>
 
     {cover && (
       <div class="post__cover">
-        <Image src={cover} alt={`${title} cover image`} width={1200} />
+        <Image
+          src={cover}
+          alt={`${title} cover image`}
+          widths={[800, 1200, 1600]}
+          sizes="(min-width: 900px) 800px, 100vw"
+          data-full={cover.src}
+        />
       </div>
     )}
 
@@ -43,11 +51,12 @@ const format = (date: Date) =>
       <Content />
     </div>
   </article>
+  <Lightbox />
 </BaseLayout>
 
 <style>
   .post {
-    max-width: 44rem;
+    max-width: var(--media-width); /* one number for the text and every image: see styles/media.css */
   }
   .back {
     display: inline-block;
@@ -70,11 +79,10 @@ const format = (date: Date) =>
     gap: var(--sp-2);
     margin-bottom: var(--sp-4);
   }
+  /* Fixed width, full height: the whole image is shown, never cropped */
   .post__cover :global(img) {
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
     border: 1px solid var(--line);
     border-radius: var(--radius);
   }
@@ -116,7 +124,10 @@ const format = (date: Date) =>
     background: none;
     font-size: 0.9em;
   }
+  /* Images inside the text: same width as the text column, full height */
   .prose :global(img) {
+    width: 100%;
+    height: auto;
     border-radius: var(--radius-sm);
   }
 </style>
